@@ -1,16 +1,19 @@
 @import "@/styles/normalize.scss";
-@import "@/styles/variables.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;500&display=swap");
 
-html,
-body {
-  color: $primary-dark;
-  background: $primary-light;
+:root {
+  --text-color: #000c22;
+  --bg-color: #ffffff;
+
+  --accent-primary: #491e4b;
+  --accent-secondary: #eee9dc;
 }
 
-[data-theme="dark"],
-[data-theme="dark"] body {
-  color: $primary-light;
-  background: $primary-dark;
+[data-theme="dark"] {
+  --text-color: #ffffff;
+  --bg-color: #000c22;
+
+  --accent-primary: #eee9dc;
+  --accent-secondary: #491e4b;
 }

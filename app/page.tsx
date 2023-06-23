@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 
 import ThemeSwitch from "components/ThemeSwitcher";
 
@@ -41,7 +41,7 @@ export default function Home() {
           priority
         />
       </div>
-
+      <p className={styles.accent}>THIS IS ACCENT COLOR</p>
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
