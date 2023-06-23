@@ -1,0 +1,11 @@
+@import "@/styles/variables.scss";
+
+.themeIcon {
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+}
+
+.switcher {
+  background-color: $accent-primary !important;
+}
