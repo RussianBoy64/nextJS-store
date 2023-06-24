@@ -1,4 +1,5 @@
 @import "@/styles/normalize.scss";
+@import "@/styles/variables.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Inter:wght@400;500&display=swap");
 
@@ -16,4 +17,8 @@
 
   --accent-primary: #eee9dc;
   --accent-secondary: #491e4b;
+}
+
+body {
+  @include PrimaryText($fs-normal);
 }

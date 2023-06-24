@@ -1,0 +1,8 @@
+@import "@/styles/variables.scss";
+
+.logo {
+  grid-area: logo;
+  align-self: center;
+  @include AccentText($fs-xxl, $accent-primary);
+  text-transform: none;
+}

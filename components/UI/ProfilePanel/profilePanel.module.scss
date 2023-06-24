@@ -1,0 +1,35 @@
+@import "@/styles/variables.scss";
+
+.profilePanel {
+  grid-area: profile;
+
+  &__wishList,
+  &__profile,
+  &__cart {
+    font-size: $fs-xl;
+    cursor: pointer;
+    transition: all $tr-time ease-in-out;
+  }
+
+  &__wishList:hover,
+  &__profile:hover,
+  &__cart:hover {
+    color: $accent-primary;
+    animation: bounce $tr-time ease-in-out;
+  }
+
+  &__badge {
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

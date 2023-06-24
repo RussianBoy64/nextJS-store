@@ -1,0 +1,11 @@
+.header {
+  display: grid;
+  grid-template-areas: "gender logo profile" "search logo currency";
+  grid-template-columns: 1fr 8fr 1fr;
+  align-content: space-between;
+  gap: 0.7rem;
+  height: 8rem;
+  padding: 1.5rem 6rem;
+  text-transform: uppercase;
+  text-align: center;
+}

@@ -1,5 +1,36 @@
+// COLORS
 $text-color: var(--text-color);
 $bg-color: var(--bg-color);
-
 $accent-primary: var(--accent-primary);
 $accent-secondary: var(--accent-secondary);
+
+// TYPOGRAPHY
+$fs-normal: 16px;
+$fs-l: 1.5rem;
+$fs-xl: 2rem;
+$fs-xxl: 2.5rem;
+
+@mixin PrimaryText($font-size, $color: $text-color, $fw: 400) {
+  font-family: "Inter", sans-serif;
+  font-size: $font-size;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin AccentText($font-size, $color: $accent-primary, $fw: 400) {
+  font-family: "Architects Daughter", cursive;
+  font-size: $font-size;
+  font-weight: $fw;
+  color: $color;
+}
+
+// BREAKPOINTS
+$sm-screen: 576px;
+$lg-screen: 992px;
+$md-screen: 768px;
+$xl-screen: 1200px;
+$xxl-screen: 1400px;
+
+// TRANSITIONS
+
+$tr-time: 0.4s;
