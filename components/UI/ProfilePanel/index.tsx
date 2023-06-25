@@ -1,6 +1,6 @@
 "use client";
 
-import { Space, Avatar, Badge } from "antd";
+import { Space, Badge } from "antd";
 import { HeartOutlined, UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 
 import styles from "./profilePanel.module.scss";

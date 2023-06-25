@@ -1,6 +1,6 @@
 .header {
   display: grid;
-  grid-template-areas: "gender logo profile" "search logo currency";
+  grid-template-areas: "gender logo profile" "search logo settings";
   grid-template-columns: 1fr 8fr 1fr;
   align-content: space-between;
   gap: 0.7rem;

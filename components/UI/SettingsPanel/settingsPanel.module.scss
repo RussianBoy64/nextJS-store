@@ -1,11 +1,13 @@
 @import "@/styles/variables.scss";
 
+.settingsPanel {
+  grid-area: settings;
+}
+
 .themeIcon {
   width: 22px;
   height: 22px;
+  min-width: 22px;
+  min-height: 22px;
   padding: 2px;
-}
-
-.switcher {
-  background-color: $accent-primary !important;
 }

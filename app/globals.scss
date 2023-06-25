@@ -13,12 +13,13 @@
 
 [data-theme="dark"] {
   --text-color: #ffffff;
-  --bg-color: #000c22;
+  --bg-color: #491e4b;
 
   --accent-primary: #eee9dc;
-  --accent-secondary: #491e4b;
+  --accent-secondary: #000c22;
 }
 
 body {
   @include PrimaryText($fs-normal);
+  background-color: $bg-color;
 }

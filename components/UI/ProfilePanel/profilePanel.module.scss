@@ -6,6 +6,7 @@
   &__wishList,
   &__profile,
   &__cart {
+    color: $text-color;
     font-size: $fs-xl;
     cursor: pointer;
     transition: all $tr-time ease-in-out;
@@ -16,9 +17,6 @@
   &__cart:hover {
     color: $accent-primary;
     animation: bounce $tr-time ease-in-out;
-  }
-
-  &__badge {
   }
 }
 
