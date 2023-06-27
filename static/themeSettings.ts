@@ -8,6 +8,8 @@ export enum themeTypes {
 const TRANSPARENT = "transperent";
 const WHITE = "#ffffff";
 const BLACK = "#000c22";
+const BLACK25 = "#000c2225";
+const BLACK45 = "#000c2245";
 const POWDER = "#eee9dc";
 const POWDER30 = "#eee9dc30";
 const POWDER50 = "#eee9dc50";
@@ -37,6 +39,19 @@ const themeSettings = {
         colorTextQuaternary: PURPL_DARK,
         lineWidth: 0,
       },
+      Input: {
+        lineWidth: 0,
+        colorText: BLACK,
+        colorTextPlaceholder: BLACK25,
+        colorTextQuaternary: BLACK25,
+        colorTextTertiary: BLACK45,
+      },
+      Button: {
+        lineWidth: 0,
+        colorPrimary: "yellow",
+        colorBgContainer: WHITE,
+        colorPrimaryText: "red",
+      },
     },
   },
   [themeTypes.dark]: {
@@ -59,6 +74,17 @@ const themeSettings = {
         controlItemBgHover: POWDER30,
         colorTextQuaternary: WHITE,
         lineWidth: 0,
+      },
+      Input: {
+        lineWidth: 0,
+        colorText: WHITE,
+        colorTextPlaceholder: WHITE,
+        colorTextQuaternary: POWDER50,
+        colorTextTertiary: POWDER80,
+      },
+      Button: {
+        lineWidth: 0,
+        colorBgContainer: PURPL_DARK,
       },
     },
   },

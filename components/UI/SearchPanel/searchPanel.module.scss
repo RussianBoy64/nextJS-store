@@ -1,0 +1,7 @@
+.searchPanel {
+  grid-area: search;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
