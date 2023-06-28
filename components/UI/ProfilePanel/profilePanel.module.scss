@@ -7,7 +7,7 @@
   &__profile,
   &__cart {
     color: $text-color;
-    font-size: $fs-xl;
+    font-size: $fs-l;
     cursor: pointer;
     transition: all $tr-time ease-in-out;
   }
@@ -16,18 +16,25 @@
   &__profile:hover,
   &__cart:hover {
     color: $accent-primary;
-    animation: bounce $tr-time ease-in-out;
+    // animation: bounce $tr-time ease-in-out;
+    transform: scale(1.1);
+  }
+
+  &__wishList:active,
+  &__profile:active,
+  &__cart:active {
+    transform: scale(0.85);
   }
 }
 
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+// @keyframes bounce {
+//   0% {
+//     transform: translateY(0);
+//   }
+//   50% {
+//     transform: translateY(-5px);
+//   }
+//   100% {
+//     transform: translateY(0);
+//   }
+// }

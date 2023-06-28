@@ -5,7 +5,7 @@ export enum themeTypes {
 
 // COLORS
 
-const TRANSPARENT = "transperent";
+const TRANSPARENT = "transparent";
 const WHITE = "#ffffff";
 const BLACK = "#000c22";
 const BLACK25 = "#000c2225";
@@ -22,7 +22,8 @@ const PURPL_DARK80 = "#491e4b80";
 const themeSettings = {
   [themeTypes.light]: {
     token: {
-      // colorPrimary: PURPL_DARK,
+      colorInfoHover: PURPL_DARK80,
+      colorInfoActive: PURPL_DARK,
     },
     components: {
       Switch: {
@@ -42,21 +43,23 @@ const themeSettings = {
       Input: {
         lineWidth: 0,
         colorText: BLACK,
-        colorTextPlaceholder: BLACK25,
+        colorTextPlaceholder: BLACK45,
         colorTextQuaternary: BLACK25,
         colorTextTertiary: BLACK45,
+        colorTextDescription: PURPL_DARK,
+        colorPrimaryHover: PURPL_DARK80,
+        colorPrimaryActive: PURPL_DARK,
       },
       Button: {
         lineWidth: 0,
-        colorPrimary: "yellow",
         colorBgContainer: WHITE,
-        colorPrimaryText: "red",
       },
     },
   },
   [themeTypes.dark]: {
     token: {
-      // colorPrimary: PURPL_DARK,
+      colorInfoHover: POWDER80,
+      colorInfoActive: POWDER,
     },
     components: {
       Switch: {
@@ -81,6 +84,9 @@ const themeSettings = {
         colorTextPlaceholder: WHITE,
         colorTextQuaternary: POWDER50,
         colorTextTertiary: POWDER80,
+        colorTextDescription: WHITE,
+        colorPrimaryHover: POWDER50,
+        colorPrimaryActive: POWDER,
       },
       Button: {
         lineWidth: 0,
