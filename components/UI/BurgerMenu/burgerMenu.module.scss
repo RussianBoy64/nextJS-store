@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.burgerMenu {
+  &__btn {
+    grid-area: "burgetBtn";
+    color: $text-color;
+    background-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      color: $accent-primary !important;
+      background-color: transparent !important;
+      box-shadow: none !important;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(1);
+    }
+  }
+}

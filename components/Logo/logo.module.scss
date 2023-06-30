@@ -6,3 +6,9 @@
   @include AccentText($fs-xxl, $accent-primary);
   text-transform: none;
 }
+
+@media (max-width: $lg-screen) {
+  .logo {
+    @include AccentText($fs-xl, $accent-primary);
+  }
+}

@@ -1,3 +1,5 @@
+@import "@/styles/variables.scss";
+
 .header {
   display: grid;
   grid-template-areas: "category logo profile" "search logo settings";
@@ -8,4 +10,17 @@
   padding: 1.5rem 6rem;
   text-transform: uppercase;
   text-align: center;
+}
+
+@media (max-width: $lg-screen) {
+  .header {
+    padding: 1.5rem 1.5rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "logo burgetBtn" "category category" "search search";
+  }
 }
