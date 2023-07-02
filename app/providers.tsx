@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 import { ConfigProvider } from "antd";
-import themeSettings, { themeTypes } from "static/themeSettings";
+import themeSettings, { themeTypes } from "settings/themeSettings";
 import { useSettingsStore } from "@/store/settingsStore";
 
 export function Providers({ children }: { children: React.ReactNode }) {

@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-import { themeTypes } from "static/themeSettings";
+import { themeTypes } from "settings/themeSettings";
 
 interface SettingsState {
   themeStyle: themeTypes;

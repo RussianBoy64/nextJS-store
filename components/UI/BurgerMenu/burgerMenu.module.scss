@@ -1,21 +1,32 @@
 @import "@/styles/variables.scss";
 
 .burgerMenu {
+  &__openBtn {
+    grid-area: burgetBtn;
+    align-self: center;
+    justify-self: end;
+    border: none;
+  }
+
+  &__closeBtn {
+    display: block;
+    align-self: end;
+    border: none;
+    margin-left: auto;
+  }
+
   &__btn {
-    grid-area: "burgetBtn";
-    color: $text-color;
-    background-color: transparent;
-    box-shadow: none;
+    height: max-content;
+    font-size: $fs-l;
+  }
 
-    &:hover {
-      color: $accent-primary !important;
-      background-color: transparent !important;
-      box-shadow: none !important;
-      transform: scale(1.1);
-    }
+  &__menu,
+  &__settings {
+    width: 100%;
+    align-items: center;
+  }
 
-    &:active {
-      transform: scale(1);
-    }
+  &__drawerBody {
+    background-color: $bg-color !important;
   }
 }

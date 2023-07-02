@@ -4,10 +4,8 @@
   grid-area: settings;
 }
 
-.themeIcon {
-  width: 22px;
-  height: 22px;
-  min-width: 22px;
-  min-height: 22px;
-  padding: 2px;
+@media (max-width: $md-screen) {
+  .settingsPanel {
+    display: none;
+  }
 }

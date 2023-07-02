@@ -1,20 +1,23 @@
 "use client";
 
 import { Input } from "antd";
+import { SearchOutlined } from "@ant-design/icons";
 
 import styles from "./searchPanel.module.scss";
 
 const SearchPanel = () => {
-  const { Search } = Input;
-
-  const onSearch = (value: string) => console.log(value);
+  const onSearch = (event: React.SyntheticEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    console.log(event.currentTarget.value);
+  };
 
   return (
-    <Search
+    <Input
       placeholder="Search"
-      allowClear
       bordered={false}
-      onSearch={onSearch}
+      prefix={<SearchOutlined />}
+      onPressEnter={onSearch}
+      allowClear
       className={styles.searchPanel}
     />
   );

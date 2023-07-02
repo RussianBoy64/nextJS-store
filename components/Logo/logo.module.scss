@@ -12,3 +12,10 @@
     @include AccentText($fs-xl, $accent-primary);
   }
 }
+
+@media (max-width: $md-screen) {
+  .logo {
+    justify-self: start;
+    @include AccentText($fs-l, $accent-primary);
+  }
+}

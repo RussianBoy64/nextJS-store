@@ -1,21 +1,29 @@
 "use client";
 
-import { Space, Badge } from "antd";
-import { HeartOutlined, UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { Button, Space, Badge } from "antd";
+import { UserOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import { buttonTypes } from "settings/themeSettings";
 
 import styles from "./profilePanel.module.scss";
+import FavoriteLink from "../Links/FavoriteLink";
 
 const ProfilePanel = () => {
   return (
-    <Space size="large" direction="horizontal" className={styles.profilePanel}>
-      <Badge count={0} showZero={false} className={styles.profilePanel__badge}>
-        <HeartOutlined className={styles.profilePanel__wishList} />
-      </Badge>
+    <Space size="middle" direction="horizontal" className={styles.profilePanel}>
+      <FavoriteLink />
 
-      <UserOutlined className={styles.profilePanel__profile} />
+      <Button
+        type={buttonTypes.default}
+        icon={<UserOutlined className={styles.profilePanel__icon} />}
+        className={styles.profilePanel__btn}
+      />
 
       <Badge count={100} showZero={false}>
-        <ShoppingCartOutlined className={styles.profilePanel__cart} />
+        <Button
+          type={buttonTypes.default}
+          icon={<ShoppingCartOutlined className={styles.profilePanel__icon} />}
+          className={styles.profilePanel__btn}
+        />
       </Badge>
     </Space>
   );

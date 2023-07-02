@@ -1,7 +1,20 @@
+@import "@/styles/variables.scss";
+
 .searchPanel {
   grid-area: search;
+  border-radius: 0px;
+  border-bottom: 1px solid $accent-secondary;
+  transition: all $tr-time ease-in-out;
 
-  &:hover {
-    cursor: pointer;
+  &:hover,
+  &:focus-within {
+    border-bottom: 1px solid $accent-primary;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .searchPanel {
+    justify-self: center;
+    width: 280px;
   }
 }

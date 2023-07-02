@@ -1,0 +1,16 @@
+@import "@/styles/variables.scss";
+
+.favoriteLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize;
+  gap: 0.3rem;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0.3rem;
+
+  &__icon {
+    font-size: $fs-l;
+  }
+}
