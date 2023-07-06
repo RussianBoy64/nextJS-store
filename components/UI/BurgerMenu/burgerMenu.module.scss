@@ -2,6 +2,7 @@
 
 .burgerMenu {
   &__openBtn {
+    display: none;
     grid-area: burgetBtn;
     align-self: center;
     justify-self: end;
@@ -27,5 +28,13 @@
 
   &__drawerBody {
     background-color: $bg-color !important;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .burgerMenu {
+    &__openBtn {
+      display: block;
+    }
   }
 }
