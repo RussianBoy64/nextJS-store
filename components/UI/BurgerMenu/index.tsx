@@ -10,6 +10,7 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import { buttonTypes } from "settings/themeSettings";
+import { FavoriteLink, ProfileLink, CartLink } from "@/components/UI/Links/";
 import ThemeSwitcher from "../ThemeSwitcher";
 import CurrencySwitcher from "../CurrencySwitcher";
 
@@ -41,6 +42,7 @@ const BurgerMenu = () => {
       />
 
       <Drawer
+        width="320"
         placement="right"
         open={open}
         closable={false}
@@ -58,31 +60,12 @@ const BurgerMenu = () => {
         <Space
           direction="vertical"
           size="middle"
-          align="center"
+          align="start"
           className={styles.burgerMenu__menu}
         >
-          <Badge count={1} showZero={false}>
-            <Button
-              type={buttonTypes.link}
-              icon={<HeartOutlined className={styles.profilePanel__icon} />}
-              className={styles.profilePanel__btn}
-            />
-          </Badge>
-
-          <Button
-            type={buttonTypes.link}
-            icon={<UserOutlined className={styles.profilePanel__icon} />}
-            className={styles.profilePanel__btn}
-          />
-
-          <Button
-            type={buttonTypes.link}
-            icon={<ShoppingCartOutlined className={styles.profilePanel__icon} />}
-            className={styles.burgerMenu__btn}
-            href={routes[2].path}
-          >
-            Card <Badge count={100} showZero={false} />
-          </Button>
+          <FavoriteLink showName={true} />
+          <ProfileLink showName={true} />
+          <CartLink showName={true} />
 
           <Space
             direction="horizontal"
