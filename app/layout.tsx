@@ -1,8 +1,9 @@
 import { Providers } from "./providers";
+import Wrapper from "@/components/Wrapper";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 import "./globals.scss";
-import Wrapper from "@/components/Wrapper";
 
 export const metadata = {
   title: "NextShop | Home",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Wrapper>
             <Header />
             {children}
+            <Footer />
           </Wrapper>
         </Providers>
       </body>

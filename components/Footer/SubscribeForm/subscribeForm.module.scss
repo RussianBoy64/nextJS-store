@@ -1,0 +1,53 @@
+@import "@/styles/variables.scss";
+
+.subscribeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  &__discount {
+    width: fit-content;
+    padding: 1rem 1.25rem;
+    font-size: 1.5rem;
+    border: 1px solid $accent-secondary;
+    border-radius: $border-radius;
+
+    &__icon {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    max-width: 30rem;
+    @include PrimaryText(2rem, $text-color, 500);
+    line-height: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  &__suffix {
+    font-size: $fs-normal;
+    color: $accent-primary;
+  }
+}
+
+@media (max-width: $xl-screen) {
+  .subscribeForm {
+    &__discount {
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+    }
+
+    &__title {
+      @include PrimaryText(1.5rem, $text-color, 500);
+    }
+  }
+}
+
+@media (max-width: $md-screen) {
+  .subscribeForm {
+    align-items: center;
+    text-align: center;
+  }
+}

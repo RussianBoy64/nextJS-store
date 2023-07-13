@@ -7,14 +7,14 @@
   align-content: space-between;
   gap: 0.7rem;
   height: 8rem;
-  padding: 1.5rem 6rem;
+  padding: 1.5rem 5rem;
   text-transform: uppercase;
   text-align: center;
 }
 
 @media (max-width: $lg-screen) {
   .header {
-    padding: 1.5rem 1.5rem;
+    padding: 1.5rem;
   }
 }
 
@@ -22,5 +22,11 @@
   .header {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas: "logo burgetBtn" "category category" "search search";
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .header {
+    padding: 1rem;
   }
 }

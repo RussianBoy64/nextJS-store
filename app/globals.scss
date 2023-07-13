@@ -5,6 +5,7 @@
 
 :root {
   --text-color: #000c22;
+  --text-color50: #000c2280;
   --bg-color: #ffffff;
 
   --accent-primary: #a332f2;
@@ -13,6 +14,7 @@
 
 [data-theme="dark"] {
   --text-color: #ffffff;
+  --text-color50: #ffffff80;
   --bg-color: #000c22;
 
   --accent-primary: #a332f2;

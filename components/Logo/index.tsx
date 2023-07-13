@@ -6,7 +6,7 @@ import styles from "./logo.module.scss";
 const Logo = () => {
   return (
     <Link href={routes[routesNames.home].path} className={styles.logo}>
-      <span>NextShop</span>
+      <span>Shopping</span>
     </Link>
   );
 };

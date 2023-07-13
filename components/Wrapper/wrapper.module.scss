@@ -1,4 +1,8 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 120rem;
+  min-height: 100vh;
   margin: 0 auto;
 }

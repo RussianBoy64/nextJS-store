@@ -1,0 +1,58 @@
+@import "@/styles/variables.scss";
+
+.footer {
+  padding: 1.5rem 5rem;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid $accent-secondary;
+    border-radius: $border-radius;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__divider {
+    grid-column: 1/3;
+    height: 1px;
+    margin-bottom: 2rem;
+    background-color: $accent-secondary;
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .footer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .footer {
+    &__layout {
+      grid-template-columns: 1fr;
+    }
+
+    &__image {
+      height: 10rem;
+    }
+
+    &__divider {
+      grid-column: initial;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .footer {
+    padding: 1rem;
+
+    &__layout {
+      padding: 0.5rem;
+    }
+  }
+}

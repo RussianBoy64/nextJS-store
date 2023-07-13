@@ -1,21 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Drawer, Space, Badge } from "antd";
-import {
-  MenuOutlined,
-  CloseOutlined,
-  HeartOutlined,
-  UserOutlined,
-  ShoppingCartOutlined,
-} from "@ant-design/icons";
+import { Button, Drawer, Space } from "antd";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { buttonTypes } from "settings/themeSettings";
 import { FavoriteLink, ProfileLink, CartLink } from "@/components/UI/Links/";
 import ThemeSwitcher from "../ThemeSwitcher";
 import CurrencySwitcher from "../CurrencySwitcher";
 
 import styles from "./burgerMenu.module.scss";
-import routes from "routes";
+import SettingsPanel from "../SettingsPanel";
 
 const drawerHeaderStyle = {
   borderBottom: "none",
@@ -76,6 +70,7 @@ const BurgerMenu = () => {
             <ThemeSwitcher />
             <CurrencySwitcher />
           </Space>
+          <SettingsPanel />
         </Space>
       </Drawer>
     </>

@@ -1,5 +1,6 @@
 // COLORS
 $text-color: var(--text-color);
+$text-color50: var(--text-color50);
 $bg-color: var(--bg-color);
 $accent-primary: var(--accent-primary);
 $accent-secondary: var(--accent-secondary);
@@ -26,11 +27,15 @@ $fs-xxl: 2.5rem;
 
 // BREAKPOINTS
 $sm-screen: 576px;
-$lg-screen: 992px;
 $md-screen: 768px;
+$lg-screen: 992px;
 $xl-screen: 1200px;
 $xxl-screen: 1400px;
 
 // TRANSITIONS
 
 $tr-time: 0.4s;
+
+// BORDER RADIUS
+
+$border-radius: 6px;

@@ -6,6 +6,13 @@ export enum routesNames {
   favorite,
   profile,
   cart,
+  return,
+  delivery,
+  faq,
+  contacts,
+  brand,
+  media,
+  about,
 }
 
 export interface route {
@@ -22,6 +29,13 @@ const routes: route[] = [
   { id: "favorite", name: "Favorite", path: "/favorite" },
   { id: "profile", name: "Profile", path: "/profile" },
   { id: "cart", name: "Cart", path: "/cart" },
+  { id: "return", name: "Returns and complaints", path: "/return" },
+  { id: "delivery", name: "Delivery & Payment", path: "/delivery" },
+  { id: "faq", name: "FAQ", path: "/faq" },
+  { id: "contacts", name: "Contacts", path: "/contacts" },
+  { id: "brand", name: "Brand files", path: "/brand" },
+  { id: "media", name: "Media", path: "/media" },
+  { id: "about", name: "About shopping", path: "/about" },
 ];
 
 export default routes;
