@@ -2,6 +2,7 @@
 
 .settingsPanel {
   grid-area: settings;
+  justify-self: end;
 }
 
 @media (max-width: $md-screen) {

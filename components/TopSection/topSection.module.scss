@@ -1,0 +1,138 @@
+@import "@/styles/variables.scss";
+
+.topSection {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-template-areas: "promo image";
+  align-items: center;
+  gap: 1rem;
+  height: 30rem;
+  padding: 1rem 7rem;
+  background-image: url("../../public/images/first_screen_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+
+  &__promo {
+    grid-area: promo;
+  }
+
+  &__image {
+    grid-area: image;
+    object-fit: contain;
+    height: min-content;
+  }
+}
+
+.promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+
+  &__title {
+    @include PrimaryText(3rem, $white, 500);
+    text-transform: uppercase;
+    line-height: 3rem;
+  }
+
+  &__accent {
+    @include AccentText(3rem, $white, 400);
+    border-bottom: 3px solid $white;
+  }
+
+  &__discount {
+    margin-left: 1rem;
+    padding: 0.7rem;
+    @include PrimaryText(1.6rem, $white, 500);
+    line-height: 3.5rem;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: $accent-primary;
+    border-radius: 2rem;
+  }
+
+  &__brands {
+    color: $white;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: $xxl-screen) {
+  .topSection {
+    height: 22rem;
+  }
+
+  .promo {
+    &__title {
+      font-size: $fs-xxl;
+    }
+
+    &__accent {
+      font-size: $fs-xl;
+    }
+  }
+}
+
+@media (max-width: $xl-screen) {
+  .topSection {
+    grid-template-columns: 3fr 4fr;
+  }
+
+  .promo {
+    gap: 1rem;
+
+    &__title {
+      font-size: $fs-xl;
+    }
+
+    &__discount {
+      font-size: $fs-normal;
+    }
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .topSection {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 2.5rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .topSection {
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "promo";
+    height: 37rem;
+  }
+
+  .promo {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__title {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .topSection {
+    align-items: flex-start;
+    height: min-content;
+    padding: 1rem;
+  }
+
+  .promo {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    &__title,
+    &__accent {
+      font-size: $fs-l;
+      line-height: 2rem;
+    }
+  }
+}

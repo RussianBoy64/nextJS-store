@@ -1,10 +1,16 @@
-import styles from "./page.module.scss";
+import TopSection from "@/components/TopSection";
+
+import styles from "./homePage.module.scss";
+
+export const metadata = {
+  title: "NextShop | Home",
+  description: "Online shop application created with NextJS",
+};
 
 const Home = () => {
   return (
     <main className={styles.main}>
-      <h1>TITLE</h1>
-      <p className={styles.accent}>THIS IS ACCENT COLOR</p>
+      <TopSection />
     </main>
   );
 };

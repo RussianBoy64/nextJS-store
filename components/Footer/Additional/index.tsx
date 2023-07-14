@@ -38,7 +38,7 @@ const Additional = () => {
         <span className={styles.additional__title}>Help and info</span>
 
         {helpAndInfoLinks.map((link) => (
-          <Link href={link.path} className={styles.additional__link}>
+          <Link href={link.path} key={link.id} className={styles.additional__link}>
             {link.name}
           </Link>
         ))}
@@ -48,7 +48,7 @@ const Additional = () => {
         <span className={styles.additional__title}>Cooperation</span>
 
         {cooperationLinks.map((link) => (
-          <Link href={link.path} className={styles.additional__link}>
+          <Link href={link.path} key={link.id} className={styles.additional__link}>
             {link.name}
           </Link>
         ))}

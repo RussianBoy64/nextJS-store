@@ -1,10 +1,10 @@
 import Image from "next/image";
 import SubscribeForm from "./SubscribeForm";
 import Socials from "./Socials";
+import Additional from "./Additional";
 
 import footerImg from "public/images/footer_img.jpg";
 import styles from "./footer.module.scss";
-import Additional from "./Additional";
 
 const Footer = () => {
   return (

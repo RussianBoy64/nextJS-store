@@ -2,6 +2,7 @@
 
 .profilePanel {
   grid-area: profile;
+  justify-self: end;
 
   &__btn {
     border: none;

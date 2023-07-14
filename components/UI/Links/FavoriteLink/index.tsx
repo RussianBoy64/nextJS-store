@@ -4,11 +4,11 @@ import Link from "next/link";
 import routes, { routesNames } from "routes";
 import { Badge } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
-import { linkProps } from "@/components/UI/Links/";
+import { ProfileLinkProps } from "@/components/UI/Links/";
 
 import styles from "@/components/UI/Links/link.module.scss";
 
-const FavoriteLink = ({ showName = false }: linkProps) => {
+const FavoriteLink = ({ showName = false }: ProfileLinkProps) => {
   return (
     <>
       {showName ? (
