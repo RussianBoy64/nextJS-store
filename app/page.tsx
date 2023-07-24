@@ -1,4 +1,5 @@
 import TopSection from "@/components/TopSection";
+import BrandFilter from "@/components/BrandFilter/intex";
 
 import styles from "./homePage.module.scss";
 
@@ -11,6 +12,7 @@ const Home = () => {
   return (
     <main className={styles.main}>
       <TopSection />
+      <BrandFilter />
     </main>
   );
 };
