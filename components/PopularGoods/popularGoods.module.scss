@@ -1,0 +1,17 @@
+@import "@/styles/variables.scss";
+
+.popularGoods {
+  position: relative;
+  padding: 1.5rem 5rem;
+  overflow: hidden;
+
+  &__swiper {
+    overflow-x: visible;
+  }
+
+  &__item {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+  }
+}

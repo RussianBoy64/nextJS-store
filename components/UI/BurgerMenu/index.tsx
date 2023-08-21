@@ -60,16 +60,6 @@ const BurgerMenu = () => {
           <FavoriteLink showName={true} />
           <ProfileLink showName={true} />
           <CartLink showName={true} />
-
-          <Space
-            direction="horizontal"
-            size="middle"
-            align="center"
-            className={styles.burgerMenu__settings}
-          >
-            <ThemeSwitcher />
-            <CurrencySwitcher />
-          </Space>
           <SettingsPanel />
         </Space>
       </Drawer>
