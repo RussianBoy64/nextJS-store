@@ -1,21 +1,34 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
+import { getProducts, queryKey } from "api/getProducts";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, A11y } from "swiper/modules";
+import { A11y } from "swiper/modules";
 import SwiperNavigation from "@/components/UI/SwiperNavigation";
 
 import "swiper/scss";
-import "swiper/scss/navigation";
 
 import styles from "./popularGoods.module.scss";
+import { Product, productsCategories, useProductsStore } from "@/store/products";
+import Image from "next/image";
 
 const PopularGoods = () => {
+  const { data } = useQuery<Product[]>({
+    queryKey: [queryKey.products],
+    queryFn: getProducts,
+  });
+
+  const productsData = data?.filter(
+    (product) => product.category !== productsCategories.electronics
+  );
+
+  console.log(productsData);
+
   return (
     <section className={styles.popularGoods}>
       <Swiper
         className={styles.popularGoods__swiper}
-        modules={[Navigation, A11y]}
-        navigation={true}
+        modules={[A11y]}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -40,13 +53,13 @@ const PopularGoods = () => {
         }}
         onSlideChange={(swiper) => swiper.update()}
       >
-        <SwiperSlide className={styles.popularGoods__item}>Slide 1</SwiperSlide>
-        <SwiperSlide className={styles.popularGoods__item}>Slide 2</SwiperSlide>
-        <SwiperSlide className={styles.popularGoods__item}>Slide 3</SwiperSlide>
-        <SwiperSlide className={styles.popularGoods__item}>Slide 4</SwiperSlide>
-        <SwiperSlide className={styles.popularGoods__item}>Slide 4</SwiperSlide>
-        <SwiperSlide className={styles.popularGoods__item}>Slide 4</SwiperSlide>
-        <SwiperSlide className={styles.popularGoods__item}>Slide 4</SwiperSlide>
+        {productsData?.map((product) => (
+          <SwiperSlide className={styles.popularGoods__item} key={product.id}>
+            <Image src={product.image} alt={product.title} width={398} height={604} />
+            {product.title}
+          </SwiperSlide>
+        ))}
+
         <SwiperNavigation />
       </Swiper>
     </section>

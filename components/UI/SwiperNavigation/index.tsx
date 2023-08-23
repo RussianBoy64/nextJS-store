@@ -20,7 +20,6 @@ const swiperNavigation = () => {
     setIsBeginning(swiper.isBeginning);
     setIsEnd(swiper.isEnd);
   };
-  console.log(swiper.isBeginning, swiper.isEnd);
 
   return (
     <>

@@ -1,6 +1,6 @@
 import TopSection from "@/components/TopSection";
 import BrandFilter from "@/components/BrandFilter";
-import PopularGoods from "@/components/PopularGoods";
+import HydratedPosts from "@/components/PopularGoods/hydratedPopularGoods";
 
 import styles from "./homePage.module.scss";
 
@@ -14,7 +14,7 @@ const Home = () => {
     <main className={styles.main}>
       <TopSection />
       <BrandFilter />
-      <PopularGoods />
+      <HydratedPosts />
     </main>
   );
 };
