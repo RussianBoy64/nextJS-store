@@ -1,28 +1,39 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { getProducts, queryKey } from "api/getProducts";
+import {
+  Product,
+  fetchProductsByCategory,
+  getAllProducts,
+  productsCategories,
+  queryKey,
+} from "api/productsData";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y } from "swiper/modules";
+
 import SwiperNavigation from "@/components/UI/SwiperNavigation";
-
-import "swiper/scss";
-
-import styles from "./popularGoods.module.scss";
-import { Product, productsCategories, useProductsStore } from "@/store/products";
 import Image from "next/image";
 
-const PopularGoods = () => {
-  const { data } = useQuery<Product[]>({
-    queryKey: [queryKey.products],
-    queryFn: getProducts,
-  });
+import "swiper/scss";
+import styles from "./popularGoods.module.scss";
 
-  const productsData = data?.filter(
-    (product) => product.category !== productsCategories.electronics
-  );
+interface PopularGoodsProps {
+  category: productsCategories;
+}
 
-  console.log(productsData);
+const PopularGoods = ({ category }: PopularGoodsProps) => {
+  // const { data } = useQuery<Product[]>({
+  //   queryKey: [queryKey.products],
+  //   queryFn: getAllProducts,
+  // });
+
+  const { data } = fetchProductsByCategory(category);
+
+  // const productsData = data?.filter(
+  //   (product) => product.category !== productsCategories.electronics
+  // );
+
+  console.log(data);
 
   return (
     <section className={styles.popularGoods}>
@@ -53,7 +64,7 @@ const PopularGoods = () => {
         }}
         onSlideChange={(swiper) => swiper.update()}
       >
-        {productsData?.map((product) => (
+        {data?.map((product) => (
           <SwiperSlide className={styles.popularGoods__item} key={product.id}>
             <Image src={product.image} alt={product.title} width={398} height={604} />
             {product.title}

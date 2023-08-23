@@ -1,6 +1,8 @@
+import HydratedPopularGoods from "@/components/PopularGoods/hydratedPopularGoods";
+import { productsCategories } from "api/productsData";
+
 import TopSection from "@/components/TopSection";
 import BrandFilter from "@/components/BrandFilter";
-import HydratedPosts from "@/components/PopularGoods/hydratedPopularGoods";
 
 import styles from "./homePage.module.scss";
 
@@ -14,7 +16,7 @@ const Home = () => {
     <main className={styles.main}>
       <TopSection />
       <BrandFilter />
-      <HydratedPosts />
+      <HydratedPopularGoods category={productsCategories.woman} />
     </main>
   );
 };
