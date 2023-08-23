@@ -1,7 +1,9 @@
-import React from "react";
+import { productsCategories } from "api/productsData";
+
+import HydratedPopularGoods from "@/components/PopularGoods/hydratedPopularGoods";
 
 const Jewelry = () => {
-  return <div> Jewelry</div>;
+  return <HydratedPopularGoods category={productsCategories.jewelery} />;
 };
 
 export default Jewelry;

@@ -1,5 +1,4 @@
 export enum routesNames {
-  home,
   woman,
   man,
   jewelry,
@@ -22,8 +21,7 @@ export interface route {
 }
 
 const routes: route[] = [
-  { id: "home", name: "Home", path: "/" },
-  { id: "woman", name: "Woman", path: "/woman" },
+  { id: "woman", name: "Woman", path: "/" },
   { id: "man", name: "Man", path: "/man" },
   { id: "jewelry", name: "Jewelry", path: "/jewelry" },
   { id: "favorite", name: "Favorite", path: "/favorite" },

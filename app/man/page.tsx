@@ -1,7 +1,9 @@
-import React from "react";
+import { productsCategories } from "api/productsData";
+
+import HydratedPopularGoods from "@/components/PopularGoods/hydratedPopularGoods";
 
 const ManPage = () => {
-  return <div>ManPage</div>;
+  return <HydratedPopularGoods category={productsCategories.man} />;
 };
 
 export default ManPage;
