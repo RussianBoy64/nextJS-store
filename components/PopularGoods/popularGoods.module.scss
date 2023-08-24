@@ -6,12 +6,31 @@
   overflow: hidden;
 
   &__swiper {
-    overflow-x: visible;
+    overflow: visible;
   }
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  &__card {
+    padding: 1rem;
+    border: 1px solid transparent;
+
+    transition: all $tr-time ease-in-out;
+    transform: translateY(0);
+
+    & button {
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+
+  &__card:hover {
+    border: 1px solid $gray;
+    box-shadow: #a232f249 0px 13px 27px -5px, #a232f263 0px 8px 16px -8px;
+
+    transform: translateY(-5px);
+
+    & button {
+      z-index: 100;
+      opacity: 1;
+    }
   }
 }

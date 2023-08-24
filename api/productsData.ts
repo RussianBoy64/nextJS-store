@@ -82,28 +82,24 @@ export const prefetchProductsByCategory = async (category: productsCategories) =
 export const fetchProductsByCategory = (category: productsCategories) => {
   switch (category) {
     case productsCategories.woman:
-      console.log("woman");
       return useQuery<Product[]>({
         queryKey: [queryKey.woman],
         queryFn: getWomanProducts,
       });
 
     case productsCategories.man:
-      console.log("man");
       return useQuery<Product[]>({
         queryKey: [queryKey.man],
         queryFn: getManProducts,
       });
 
     case productsCategories.jewelery:
-      console.log("jewelery");
       return useQuery<Product[]>({
         queryKey: [queryKey.jewelery],
         queryFn: getJeweleryProducts,
       });
 
     default:
-      console.log("products");
       return useQuery<Product[]>({
         queryKey: [queryKey.products],
         queryFn: getAllProducts,

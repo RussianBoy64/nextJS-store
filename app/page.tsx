@@ -7,7 +7,7 @@ import BrandFilter from "@/components/BrandFilter";
 import styles from "./homePage.module.scss";
 
 export const metadata = {
-  title: "NextShop | Home",
+  title: "NextShop | Women`s clothing",
   description: "Online shop application created with NextJS",
 };
 

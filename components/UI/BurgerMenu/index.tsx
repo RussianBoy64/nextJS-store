@@ -5,11 +5,9 @@ import { Button, Drawer, Space } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { buttonTypes } from "settings/themeSettings";
 import { FavoriteLink, ProfileLink, CartLink } from "@/components/UI/Links/";
-import ThemeSwitcher from "../ThemeSwitcher";
-import CurrencySwitcher from "../CurrencySwitcher";
+import SettingsPanel from "../SettingsPanel";
 
 import styles from "./burgerMenu.module.scss";
-import SettingsPanel from "../SettingsPanel";
 
 const drawerHeaderStyle = {
   borderBottom: "none",

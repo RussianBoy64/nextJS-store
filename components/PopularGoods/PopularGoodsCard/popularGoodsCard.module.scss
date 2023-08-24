@@ -1,0 +1,57 @@
+@import "@/styles/variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 600px;
+
+  &__imageWrapper {
+    position: relative;
+  }
+
+  &__image {
+    max-height: 450px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__favorite {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__cart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-transform: uppercase;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    grid-template-rows: auto 1fr min-content;
+    grid-template-areas: "category category" "title title" ". price";
+    height: 100%;
+  }
+
+  &__category {
+    grid-area: category;
+    font-size: $fs-s;
+    color: $text-color50;
+  }
+
+  &__title {
+    grid-area: title;
+    font-weight: 600;
+  }
+
+  &__price {
+    grid-area: price;
+    color: $accent-primary;
+    font-size: $fs-l;
+    font-weight: 600;
+  }
+}
