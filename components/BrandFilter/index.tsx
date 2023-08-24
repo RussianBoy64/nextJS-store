@@ -12,15 +12,19 @@ const BrandFilter = () => {
   return (
     <section className={styles.brandFilter}>
       <Space size="large" className={styles.brandFilter__list}>
-        <Button shape="circle" icon={<LeftOutlined />} />
+        <Button
+          className={styles.brandFilter__buttonPrev}
+          shape="circle"
+          icon={<LeftOutlined />}
+        />
 
         {brands.map((brand) => {
           return (
             <Link
+              className={styles.brandFilter__link}
               href={brand.src}
               title={brand.name}
               key={brand.id}
-              className={styles.brandFilter__link}
             >
               <Image
                 src={brand.logo}
@@ -30,7 +34,11 @@ const BrandFilter = () => {
             </Link>
           );
         })}
-        <Button shape="circle" icon={<RightOutlined />} />
+        <Button
+          className={styles.brandFilter__buttonNext}
+          shape="circle"
+          icon={<RightOutlined />}
+        />
       </Space>
     </section>
   );

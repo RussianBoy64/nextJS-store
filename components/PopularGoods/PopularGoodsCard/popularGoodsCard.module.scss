@@ -55,3 +55,39 @@
     font-weight: 600;
   }
 }
+
+@media (max-width: $xl-screen) {
+  .card__image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .card {
+    height: 550px;
+
+    &__image {
+      max-height: 350px;
+    }
+  }
+}
+
+@media (max-width: $md-screen) {
+  .card {
+    height: 500px;
+
+    &__image {
+      max-height: 350px;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .card {
+    min-height: 500px;
+
+    &__image {
+      max-height: 300px;
+    }
+  }
+}

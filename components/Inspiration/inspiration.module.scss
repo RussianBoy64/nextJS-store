@@ -1,0 +1,123 @@
+@import "@/styles/variables.scss";
+
+.inspiration {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: "image quotes" "image text" "image author";
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  gap: 2rem;
+  height: 800px;
+  padding: 1.5rem 5rem;
+
+  &__imageWrapper {
+    grid-area: image;
+    position: relative;
+    width: 500px;
+    height: 500px;
+  }
+
+  &__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.quote {
+  &__quotes {
+    grid-area: quotes;
+  }
+
+  &__text {
+    grid-area: text;
+    @include AccentText($font-size: $fs-xxl, $color: $text-color);
+    text-align: center;
+  }
+}
+
+.author {
+  grid-area: author;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 2px solid $accent-secondary;
+
+  &__name,
+  &__position {
+    @include PrimaryText($font-size: $fs-l, $fw: 500);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: $xxl-screen) {
+  .inspiration {
+    padding: 1.5rem 3rem;
+  }
+
+  .quote__text {
+    font-size: $fs-xl;
+  }
+}
+
+@media (max-width: $xl-screen) {
+  .inspiration {
+    gap: 3rem;
+    height: 700px;
+
+    &__imageWrapper {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .inspiration {
+    grid-template-areas: "image quotes" "image text" "author author";
+  }
+}
+
+@media (max-width: $md-screen) {
+  .inspiration {
+    gap: 2rem;
+
+    &__imageWrapper {
+      width: 230px;
+      height: 230px;
+    }
+  }
+
+  .quote {
+    &__text {
+      font-size: $fs-l;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .inspiration {
+    grid-template-columns: 1fr;
+    grid-template-areas: "image" "quotes" "text" "author";
+    height: max-content;
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+
+    &__imageWrapper {
+      margin: 2rem 0;
+    }
+  }
+
+  .author {
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: $fs-normal;
+  }
+}

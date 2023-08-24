@@ -3,6 +3,10 @@ import { productsCategories } from "api/productsData";
 
 import TopSection from "@/components/TopSection";
 import BrandFilter from "@/components/BrandFilter";
+import Inspiration from "@/components/Inspiration";
+
+import insparationPrimaryImg from "@/public/images/inspiration2.png";
+import insparationSecondaryImg from "@/public/images/inspiration1.png";
 
 import styles from "./homePage.module.scss";
 
@@ -17,6 +21,10 @@ const Home = () => {
       <TopSection />
       <BrandFilter />
       <HydratedPopularGoods category={productsCategories.woman} />
+      <Inspiration
+        primaryImage={insparationPrimaryImg}
+        secondaryImage={insparationSecondaryImg}
+      />
     </main>
   );
 };

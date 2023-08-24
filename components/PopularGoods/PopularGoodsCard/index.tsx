@@ -25,7 +25,6 @@ const PopularGoodsCard = ({ product }: PopularGoodsCardProps) => {
           alt={product.title}
           width={398}
           height={604}
-          // fill={true}
         />
         <Button
           className={styles.card__favorite}

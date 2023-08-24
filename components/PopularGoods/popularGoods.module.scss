@@ -34,3 +34,32 @@
     }
   }
 }
+
+@media (max-width: $xl-screen) {
+  .popularGoods {
+    padding: 1.5rem 3rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .popularGoods {
+    &__card {
+      border: 1px solid $gray;
+
+      & button {
+        z-index: 10;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .popularGoods {
+    padding: 1.5rem 2rem;
+
+    &__card {
+      padding: none;
+    }
+  }
+}

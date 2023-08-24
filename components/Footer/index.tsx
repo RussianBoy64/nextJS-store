@@ -4,6 +4,7 @@ import Socials from "./Socials";
 import Additional from "./Additional";
 
 import footerImg from "public/images/footer_img.jpg";
+
 import styles from "./footer.module.scss";
 
 const Footer = () => {
