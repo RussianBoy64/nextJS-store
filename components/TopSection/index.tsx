@@ -1,17 +1,76 @@
-import Image from "next/image";
-import promoImageSrc from "@/public/images/first_screen_content.jpg";
+"use client";
+
+import Image, { StaticImageData } from "next/image";
 import { NavLink, NavLinkColors } from "@/components/UI/Links";
+import { usePathname } from "next/navigation";
+
+import promoWomanImage from "@/public/images/topSectionWoman.jpg";
+import promoManImage from "@/public/images/topSectionMan.webp";
+import promoJewelryImage from "@/public/images/topSectionJewelery.webp";
 
 import styles from "./topSection.module.scss";
+import routes, { routesNames } from "routes";
+
+interface ITopSectionContent {
+  [key: string]: {
+    title: string;
+    accent: string;
+    discount: string;
+    image: StaticImageData;
+  };
+}
+
+const topSectionContent: ITopSectionContent = {
+  woman: {
+    title: "Summer women`s",
+    accent: "Brand jeans",
+    discount: "- 35%",
+    image: promoWomanImage,
+  },
+  man: {
+    title: "Summer men`s",
+    accent: "Brand jeans",
+    discount: "- 45%",
+    image: promoManImage,
+  },
+  jewelry: {
+    title: "Summer diamonds`s",
+    accent: "Unique rings",
+    discount: "- 55%",
+    image: promoJewelryImage,
+  },
+};
+
+function getTopSectionContent(pathname: string) {
+  switch (pathname) {
+    case routes[routesNames.man].path:
+      console.log(pathname, routes[routesNames.man].path);
+      return topSectionContent[routes[routesNames.man].id as keyof ITopSectionContent];
+
+    case routes[routesNames.jewelry].path:
+      console.log(pathname, routes[routesNames.jewelry].path);
+      return topSectionContent[
+        routes[routesNames.jewelry].id as keyof ITopSectionContent
+      ];
+
+    default:
+      console.log(pathname, routes[routesNames.woman].path);
+      return topSectionContent[routes[routesNames.woman].id as keyof ITopSectionContent];
+  }
+}
 
 const TopSection = () => {
+  const pathname = usePathname();
+  const content = getTopSectionContent(pathname);
+
   return (
     <section className={styles.topSection}>
       <div className={[styles.topSection__promo, styles.promo].join(" ")}>
         <h1 className={styles.promo__title}>
-          Summer women`s <br />
-          <i className={styles.promo__accent}>Brand jeans</i>
-          <span className={styles.promo__discount}>- 35%</span>
+          {content.title}
+          <br />
+          <i className={styles.promo__accent}>{content.accent}</i>
+          <span className={styles.promo__discount}>{content.discount}</span>
         </h1>
 
         <p className={styles.promo__brands}>
@@ -21,7 +80,7 @@ const TopSection = () => {
         <NavLink href="#" text="Shop now" color={NavLinkColors.light} />
       </div>
       <Image
-        src={promoImageSrc}
+        src={content.image}
         alt="promo image"
         width={950}
         height={510}

@@ -4,22 +4,22 @@ import quotesSVG from "@/public/quotes.svg";
 import styles from "./inspiration.module.scss";
 
 interface inspirationProps {
+  backImage: StaticImageData;
   primaryImage: StaticImageData;
-  secondaryImage: StaticImageData;
 }
 
-const Inspiration = ({ primaryImage, secondaryImage }: inspirationProps) => {
+const Inspiration = ({ backImage, primaryImage }: inspirationProps) => {
   return (
     <section className={styles.inspiration}>
       <div className={styles.inspiration__imageWrapper}>
         <Image
           className={styles.inspiration__image}
-          src={primaryImage}
+          src={backImage}
           alt="inspiration photo"
         />
         <Image
           className={styles.inspiration__image}
-          src={secondaryImage}
+          src={primaryImage}
           alt="inspiration photo"
         />
       </div>
