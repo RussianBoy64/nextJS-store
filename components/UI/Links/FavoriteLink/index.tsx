@@ -2,17 +2,22 @@
 
 import Link from "next/link";
 import routes, { routesNames } from "routes";
+
 import { Badge } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 import { ProfileLinkProps } from "@/components/UI/Links/";
 
 import styles from "@/components/UI/Links/link.module.scss";
 
-const FavoriteLink = ({ showName = false }: ProfileLinkProps) => {
+const FavoriteLink = ({ showName = false, clickHandler }: ProfileLinkProps) => {
   return (
     <>
       {showName ? (
-        <Link href={routes[routesNames.favorite].path} className={styles.link}>
+        <Link
+          href={routes[routesNames.favorite].path}
+          className={styles.link}
+          onClick={clickHandler}
+        >
           <HeartOutlined />
           {routes[routesNames.favorite].name}
           <Badge count={1} showZero={false} />

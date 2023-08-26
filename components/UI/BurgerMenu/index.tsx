@@ -55,9 +55,9 @@ const BurgerMenu = () => {
           align="start"
           className={styles.burgerMenu__menu}
         >
-          <FavoriteLink showName={true} />
-          <ProfileLink showName={true} />
-          <CartLink showName={true} />
+          <FavoriteLink showName={true} clickHandler={onClose} />
+          <ProfileLink showName={true} clickHandler={onClose} />
+          <CartLink showName={true} clickHandler={onClose} />
           <SettingsPanel />
         </Space>
       </Drawer>
