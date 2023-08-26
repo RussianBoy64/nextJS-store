@@ -1,6 +1,11 @@
 @import "@/styles/variables.scss";
 
 .header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
   display: grid;
   grid-template-areas: "category logo profile" "search logo settings";
   grid-template-columns: 2fr 7fr 2fr;
@@ -10,6 +15,7 @@
   padding: 1.5rem 5rem;
   text-transform: uppercase;
   text-align: center;
+  background-color: $bg-color;
 }
 
 @media (max-width: $lg-screen) {

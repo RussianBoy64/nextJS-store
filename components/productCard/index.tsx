@@ -1,5 +1,6 @@
 import { Product } from "api/productsData";
 import routes, { routesNames } from "routes";
+import { useUserStore } from "@/store/userStore";
 import { buttonTypes } from "settings/themeSettings";
 
 import Link from "next/link";
@@ -14,7 +15,25 @@ interface PopularGoodsCardProps {
 }
 
 const ProductCard = ({ product }: PopularGoodsCardProps) => {
+  const [favoriteProductList, addProductToFavorite, removeProductFromFavorite] =
+    useUserStore((state) => [
+      state.favoriteProduct,
+      state.addProductToFavorite,
+      state.removeProductFromFavorite,
+    ]);
+  const isProductInFavorites = favoriteProductList.includes(product.id);
+
   const productRoute = `${routes[routesNames.product].path}/${product.id}`;
+
+  const favoriteClickHander = (event: React.MouseEvent) => {
+    event.preventDefault();
+
+    if (isProductInFavorites) {
+      removeProductFromFavorite(product.id);
+    } else {
+      addProductToFavorite(product.id);
+    }
+  };
 
   return (
     <Link className={styles.card} href={productRoute}>
@@ -29,11 +48,8 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
         <Button
           className={styles.card__favorite}
           type={buttonTypes.default}
-          icon={<HeartOutlined />}
-          onClick={(event) => {
-            event.stopPropagation();
-            alert("add to favorite");
-          }}
+          icon={isProductInFavorites ? <HeartFilled /> : <HeartOutlined />}
+          onClick={favoriteClickHander}
         />
         <Button
           className={styles.card__cart}

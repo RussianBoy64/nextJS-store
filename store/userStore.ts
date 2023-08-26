@@ -1,10 +1,10 @@
-import { Product } from "api/productsData";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
 interface UserState {
-  favoriteProduct: Pick<Product, "id">[];
-  addProductToFavorite: (favoriteProductId: Pick<Product, "id">) => void;
+  favoriteProduct: number[];
+  addProductToFavorite: (favoriteProductId: number) => void;
+  removeProductFromFavorite: (idToRemove: number) => void;
 }
 
 export const useUserStore = create<UserState>()(
@@ -14,6 +14,12 @@ export const useUserStore = create<UserState>()(
       addProductToFavorite: (favoriteProductId) =>
         set((state) => ({
           favoriteProduct: [...state.favoriteProduct, favoriteProductId],
+        })),
+      removeProductFromFavorite: (idToRemove) =>
+        set((state) => ({
+          favoriteProduct: state.favoriteProduct.filter(
+            (productId) => productId !== idToRemove
+          ),
         })),
     }),
     { name: "user-storage" }

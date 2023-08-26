@@ -8,8 +8,11 @@ import { HeartOutlined } from "@ant-design/icons";
 import { ProfileLinkProps } from "@/components/UI/Links/";
 
 import styles from "@/components/UI/Links/link.module.scss";
+import { useUserStore } from "@/store/userStore";
 
 const FavoriteLink = ({ showName = false, clickHandler }: ProfileLinkProps) => {
+  const favoriteProducts = useUserStore((state) => state.favoriteProduct);
+
   return (
     <>
       {showName ? (
@@ -20,10 +23,10 @@ const FavoriteLink = ({ showName = false, clickHandler }: ProfileLinkProps) => {
         >
           <HeartOutlined />
           {routes[routesNames.favorite].name}
-          <Badge count={1} showZero={false} />
+          <Badge count={favoriteProducts.length} showZero={false} />
         </Link>
       ) : (
-        <Badge count={1} showZero={false}>
+        <Badge count={favoriteProducts.length} showZero={false}>
           <Link href={routes[routesNames.favorite].path} className={styles.link}>
             <HeartOutlined />
           </Link>

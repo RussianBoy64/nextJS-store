@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Wrapper>
             <Header />
-            <main style={{ flexGrow: 1 }}>{children}</main>
+            <main className="main">{children}</main>
             <Footer />
           </Wrapper>
         </Providers>

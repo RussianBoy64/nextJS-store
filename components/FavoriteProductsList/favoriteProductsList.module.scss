@@ -18,6 +18,12 @@
   }
 }
 
+.notFound {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
 @media (max-width: $xl-screen) {
   .favoriteProducts {
     & > a {
