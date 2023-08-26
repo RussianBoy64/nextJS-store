@@ -16,6 +16,9 @@ const getNavlinkColor = (color: NavLinkColors) => {
     case NavLinkColors.gray:
       linkStyles.push(styles.navlink_gray);
       break;
+    default:
+      linkStyles.push(styles.navlink_purple);
+      break;
   }
 
   return linkStyles.join(" ");

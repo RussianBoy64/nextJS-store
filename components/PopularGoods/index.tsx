@@ -9,6 +9,7 @@ import PopularGoodsCard from "@/components/PopularGoods/PopularGoodsCard";
 
 import "swiper/scss";
 import styles from "./popularGoods.module.scss";
+
 interface PopularGoodsProps {
   category: productsCategories;
 }

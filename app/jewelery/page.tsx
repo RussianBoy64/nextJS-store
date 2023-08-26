@@ -8,8 +8,6 @@ import Inspiration from "@/components/Inspiration";
 import insparationWomanImg from "@/public/images/inspirationJewelery.jpg";
 import insparationBackImg from "@/public/images/inspirationBack.png";
 
-import styles from "./jeweleryPage.module.scss";
-
 export const metadata = {
   title: "NextShop | Jewelery",
   description: "Online shop application created with NextJS",
@@ -17,12 +15,12 @@ export const metadata = {
 
 const Jewelry = () => {
   return (
-    <main className={styles.main}>
+    <>
       <TopSection />
       <BrandFilter />
-      <HydratedPopularGoods category={productsCategories.woman} />
+      <HydratedPopularGoods category={productsCategories.jewelery} />
       <Inspiration backImage={insparationBackImg} primaryImage={insparationWomanImg} />
-    </main>
+    </>
   );
 };
 

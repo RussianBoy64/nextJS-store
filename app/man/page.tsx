@@ -8,8 +8,6 @@ import Inspiration from "@/components/Inspiration";
 import insparationManImg from "@/public/images/inspirationMan.jpg";
 import insparationBackImg from "@/public/images/inspirationBack.png";
 
-import styles from "./manPage.module.scss";
-
 export const metadata = {
   title: "NextShop | Men`s clothing",
   description: "Online shop application created with NextJS",
@@ -17,12 +15,12 @@ export const metadata = {
 
 const ManPage = () => {
   return (
-    <main className={styles.main}>
+    <>
       <TopSection />
       <BrandFilter />
       <HydratedPopularGoods category={productsCategories.man} />
       <Inspiration backImage={insparationBackImg} primaryImage={insparationManImg} />
-    </main>
+    </>
   );
 };
 

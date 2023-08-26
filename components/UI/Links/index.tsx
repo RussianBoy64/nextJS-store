@@ -16,6 +16,7 @@ export interface NavLinkProps {
 export enum NavLinkColors {
   light,
   gray,
+  purple,
 }
 
 export { FavoriteLink, ProfileLink, CartLink, NavLink };

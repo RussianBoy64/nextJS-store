@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 import promoWomanImage from "@/public/images/topSectionWoman.jpg";
 import promoManImage from "@/public/images/topSectionMan.webp";
-import promoJewelryImage from "@/public/images/topSectionJewelery.webp";
+import promojeweleryImage from "@/public/images/topSectionJewelery.webp";
 
 import styles from "./topSection.module.scss";
 import routes, { routesNames } from "routes";
@@ -33,11 +33,11 @@ const topSectionContent: ITopSectionContent = {
     discount: "- 45%",
     image: promoManImage,
   },
-  jewelry: {
+  jewelery: {
     title: "Summer diamonds`s",
     accent: "Unique rings",
     discount: "- 55%",
-    image: promoJewelryImage,
+    image: promojeweleryImage,
   },
 };
 
@@ -47,10 +47,10 @@ function getTopSectionContent(pathname: string) {
       console.log(pathname, routes[routesNames.man].path);
       return topSectionContent[routes[routesNames.man].id as keyof ITopSectionContent];
 
-    case routes[routesNames.jewelry].path:
-      console.log(pathname, routes[routesNames.jewelry].path);
+    case routes[routesNames.jewelery].path:
+      console.log(pathname, routes[routesNames.jewelery].path);
       return topSectionContent[
-        routes[routesNames.jewelry].id as keyof ITopSectionContent
+        routes[routesNames.jewelery].id as keyof ITopSectionContent
       ];
 
     default:

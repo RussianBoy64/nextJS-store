@@ -13,7 +13,7 @@ const CategoriesPanel = () => {
   const categoryRoutes = [
     routes[routesNames.woman],
     routes[routesNames.man],
-    routes[routesNames.jewelry],
+    routes[routesNames.jewelery],
   ];
 
   return (

@@ -25,3 +25,11 @@ body {
   @include PrimaryText($fs-normal);
   background-color: $bg-color;
 }
+
+.main {
+  flex-grow: 1;
+}
+
+.notFound {
+  text-align: center;
+}

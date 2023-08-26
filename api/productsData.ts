@@ -1,6 +1,5 @@
-import { UseQueryOptions, UseQueryResult, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import getQueryClient from "app/getQueryClient";
-import Error from "next/error";
 
 export enum queryKey {
   products = "products",

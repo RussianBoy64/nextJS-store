@@ -26,6 +26,7 @@ const themeSettings = {
       colorInfo: PURPL,
       colorTextBase: BLACK,
       colorBgBase: WHITE,
+      colorLink: BLACK,
     },
     algorithm: theme.defaultAlgorithm,
   },

@@ -2,7 +2,7 @@
 
 .burgerMenu {
   &__openBtn {
-    display: none;
+    display: none !important;
     grid-area: burgetBtn;
     align-self: center;
     justify-self: end;

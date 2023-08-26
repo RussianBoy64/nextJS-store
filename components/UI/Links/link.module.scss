@@ -1,7 +1,7 @@
 @import "@/styles/variables.scss";
 
 .link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -30,6 +30,11 @@
   &_gray {
     color: $violet;
     background-color: $gray;
+  }
+
+  &_purple {
+    color: $white;
+    background-color: $accent-primary;
   }
 
   &__arrow {
