@@ -1,0 +1,46 @@
+@import "@/styles/variables.scss";
+
+.favoriteProducts {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  & > a {
+    width: 200px;
+    height: 450px;
+  }
+
+  & img {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: $xl-screen) {
+  .favoriteProducts {
+    & > a {
+      width: 200px;
+      height: 450px;
+    }
+  }
+}
+
+@media (max-width: $md-screen) {
+  .favoriteProducts {
+    gap: 1rem;
+
+    & > a {
+      width: 250px;
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .favoriteProducts > a {
+    width: 280px;
+    height: 400px;
+  }
+}

@@ -13,7 +13,7 @@
 
   &__buttonPrev,
   &__buttonNext {
-    position: absolute;
+    position: absolute !important;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -50,7 +50,7 @@
 
 @media (max-width: $lg-screen) {
   .brandFilter {
-    padding: 4rem 5.5rem;
+    padding: 5.5rem 4rem;
 
     &__list {
       justify-content: center;
@@ -62,7 +62,7 @@
 @media (max-width: $sm-screen) {
   .brandFilter {
     gap: 1rem;
-    padding: 4rem;
+    padding: 2rem 4rem;
 
     &__buttonPrev {
       left: 1.5rem;

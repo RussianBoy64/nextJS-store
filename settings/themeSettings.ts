@@ -35,6 +35,7 @@ const themeSettings = {
       colorPrimary: PURPL,
       colorInfo: PURPL,
       colorTextBase: WHITE,
+      colorLink: WHITE,
       colorBgBase: BLACK,
       colorBorder: PURPL,
       colorBorderSecondary: PURPL_DARK,

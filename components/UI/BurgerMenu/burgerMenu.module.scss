@@ -6,13 +6,13 @@
     grid-area: burgetBtn;
     align-self: center;
     justify-self: end;
-    border: none;
+    border: none !important;
   }
 
   &__closeBtn {
-    display: block;
+    display: block !important;
     align-self: end;
-    border: none;
+    border: none !important;
     margin-left: auto;
   }
 
@@ -34,7 +34,7 @@
 @media (max-width: $md-screen) {
   .burgerMenu {
     &__openBtn {
-      display: block;
+      display: block !important;
     }
   }
 }

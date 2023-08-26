@@ -3,12 +3,12 @@
 .searchPanel {
   grid-area: search;
   border-radius: 0px;
-  border-bottom: 1px solid $accent-secondary;
+  border-bottom: 1px solid $accent-secondary !important;
   transition: all $tr-time ease-in-out;
 
   &:hover,
   &:focus-within {
-    border-bottom: 1px solid $accent-primary;
+    border-bottom: 1px solid $accent-primary !important;
   }
 }
 

@@ -1,10 +1,27 @@
 @import "@/styles/variables.scss";
 
 .card {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 20px;
   height: 600px;
+  padding: 1rem;
+  border: 1px solid transparent;
+
+  transition: all $tr-time ease-in-out;
+  transform: translateY(0);
+
+  &:hover {
+    border: 1px solid $gray;
+    box-shadow: #a232f249 0px 13px 27px -5px, #a232f263 0px 8px 16px -8px;
+
+    transform: translateY(-5px);
+
+    & button {
+      z-index: 100;
+      opacity: 1;
+    }
+  }
 
   &__imageWrapper {
     position: relative;
@@ -16,14 +33,20 @@
     object-position: center;
   }
 
+  &__favorite,
+  &__cart {
+    z-index: -1;
+    opacity: 0;
+  }
+
   &__favorite {
-    position: absolute;
+    position: absolute !important;
     top: 0;
     right: 0;
   }
 
   &__cart {
-    position: absolute;
+    position: absolute !important;
     bottom: 0;
     right: 0;
     text-transform: uppercase;
@@ -69,12 +92,18 @@
     &__image {
       max-height: 350px;
     }
+
+    &__favorite,
+    &__cart {
+      z-index: 100;
+      opacity: 1;
+    }
   }
 }
 
 @media (max-width: $md-screen) {
   .card {
-    height: 500px;
+    border: 1px solid $gray;
 
     &__image {
       max-height: 350px;
@@ -84,7 +113,8 @@
 
 @media (max-width: $sm-screen) {
   .card {
-    min-height: 500px;
+    height: 500px;
+    padding: none;
 
     &__image {
       max-height: 300px;

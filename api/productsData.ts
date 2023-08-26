@@ -12,7 +12,6 @@ export enum productsCategories {
   man = "men's clothing",
   woman = "women's clothing",
   jewelery = "jewelery",
-  electronics = "electronics",
 }
 
 export interface Product {
@@ -54,6 +53,14 @@ export const getJeweleryProducts = async () => {
   return res.json();
 };
 
+export const prefetchAllProducts = async () => {
+  const queryClient = getQueryClient();
+
+  await queryClient.prefetchQuery([queryKey.products], getAllProducts);
+
+  return queryClient;
+};
+
 export const prefetchProductsByCategory = async (category: productsCategories) => {
   const queryClient = getQueryClient();
 
@@ -76,6 +83,13 @@ export const prefetchProductsByCategory = async (category: productsCategories) =
   }
 
   return queryClient;
+};
+
+export const fetchAllProducts = () => {
+  return useQuery<Product[]>({
+    queryKey: [queryKey.products],
+    queryFn: getAllProducts,
+  });
 };
 
 export const fetchProductsByCategory = (category: productsCategories) => {

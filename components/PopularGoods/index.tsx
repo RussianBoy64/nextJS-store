@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y } from "swiper/modules";
 
 import SwiperNavigation from "@/components/UI/SwiperNavigation";
-import PopularGoodsCard from "@/components/PopularGoods/PopularGoodsCard";
+import ProductCard from "@/components/productCard";
 
 import "swiper/scss";
 import styles from "./popularGoods.module.scss";
@@ -16,8 +16,6 @@ interface PopularGoodsProps {
 
 const PopularGoods = ({ category }: PopularGoodsProps) => {
   const { data } = fetchProductsByCategory(category);
-
-  console.log(data);
 
   return (
     <section className={styles.popularGoods}>
@@ -46,7 +44,7 @@ const PopularGoods = ({ category }: PopularGoodsProps) => {
       >
         {data!.map((product) => (
           <SwiperSlide className={styles.popularGoods__card} key={product.id}>
-            <PopularGoodsCard product={product} />
+            <ProductCard product={product} />
           </SwiperSlide>
         ))}
 

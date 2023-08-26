@@ -7,13 +7,13 @@ import Image from "next/image";
 import { Button } from "antd";
 import { HeartOutlined, HeartFilled, ShoppingCartOutlined } from "@ant-design/icons";
 
-import styles from "./popularGoodsCard.module.scss";
+import styles from "./productCard.module.scss";
 
 interface PopularGoodsCardProps {
   product: Product;
 }
 
-const PopularGoodsCard = ({ product }: PopularGoodsCardProps) => {
+const ProductCard = ({ product }: PopularGoodsCardProps) => {
   const productRoute = `${routes[routesNames.product].path}/${product.id}`;
 
   return (
@@ -57,4 +57,4 @@ const PopularGoodsCard = ({ product }: PopularGoodsCardProps) => {
   );
 };
 
-export default PopularGoodsCard;
+export default ProductCard;

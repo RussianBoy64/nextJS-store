@@ -2,7 +2,7 @@
 
 .socials {
   &__list {
-    display: flex;
+    display: flex !important;
     margin-top: 1rem;
     font-size: $fs-xl;
   }
