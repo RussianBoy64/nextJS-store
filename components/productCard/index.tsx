@@ -9,6 +9,9 @@ import { Button } from "antd";
 import { HeartOutlined, HeartFilled, ShoppingCartOutlined } from "@ant-design/icons";
 
 import styles from "./productCard.module.scss";
+import useStore from "@/hooks/useStore";
+import { useSettingsStore } from "@/store/settingsStore";
+import currency, { currencyData, currencyTypes } from "settings/currencySettings";
 
 interface PopularGoodsCardProps {
   product: Product;
@@ -24,6 +27,12 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
   const isProductInFavorites = favoriteProductList.includes(product.id);
 
   const productRoute = `${routes[routesNames.product].path}/${product.id}`;
+
+  const currentCurrency = useStore(useSettingsStore, (state) => state.currensy);
+  const productPrice = currentCurrency
+    ? currency[currentCurrency].getPrice(product.price)
+    : product.price;
+  const productSign = currentCurrency ? currency[currentCurrency].sign : "$";
 
   const favoriteClickHander = (event: React.MouseEvent) => {
     event.preventDefault();
@@ -67,7 +76,7 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
       <div className={styles.card__info}>
         <span className={styles.card__category}>{product.category}</span>
         <span className={styles.card__title}>{product.title}</span>
-        <span className={styles.card__price}>{`${product.price}$`}</span>
+        <span className={styles.card__price}>{`${productPrice}${productSign}`}</span>
       </div>
     </Link>
   );
