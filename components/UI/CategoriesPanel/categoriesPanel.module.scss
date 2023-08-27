@@ -1,0 +1,11 @@
+@import "@/styles/variables";
+
+.categoriesPanel {
+  grid-area: category;
+}
+
+@media (max-width: $md-screen) {
+  .categoriesPanel {
+    justify-self: center;
+  }
+}

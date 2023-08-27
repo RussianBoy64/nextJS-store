@@ -1,0 +1,77 @@
+@import "@/styles/variables.scss";
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0.3rem;
+  font-size: $fs-l;
+  text-transform: capitalize;
+}
+
+.navlink {
+  width: min-content;
+  padding: 0.8rem 1.2rem;
+  font-size: $fs-normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 2rem;
+  transition: transform $tr-time ease-in-out;
+
+  &_light {
+    color: $black;
+    background-color: $white;
+  }
+
+  &_gray {
+    color: $violet;
+    background-color: $gray;
+  }
+
+  &_purple {
+    color: $white;
+    background-color: $accent-primary;
+  }
+
+  &__arrow {
+    margin-left: 1.5rem;
+  }
+
+  &:hover {
+    transform: scale(1.06);
+
+    span {
+      animation: slide 1000ms linear infinite;
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.activeLink {
+  color: $accent-primary;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

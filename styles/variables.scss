@@ -1,0 +1,47 @@
+// COLORS
+$text-color: var(--text-color);
+$text-color50: var(--text-color50);
+$bg-color: var(--bg-color);
+$accent-primary: var(--accent-primary);
+$accent-secondary: var(--accent-secondary);
+
+$white: #ffffff;
+$black: #000c22;
+$gray: #eee9dc;
+$violet: #a332f2;
+
+// TYPOGRAPHY
+$fs-s: 12px;
+$fs-normal: 16px;
+$fs-l: 1.5rem;
+$fs-xl: 2rem;
+$fs-xxl: 2.5rem;
+
+@mixin PrimaryText($font-size, $color: $text-color, $fw: 400) {
+  font-family: "Inter", sans-serif;
+  font-size: $font-size;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin AccentText($font-size, $color: $accent-primary, $fw: 400) {
+  font-family: "Architects Daughter", cursive;
+  font-size: $font-size;
+  font-weight: $fw;
+  color: $color;
+}
+
+// BREAKPOINTS
+$sm-screen: 576px;
+$md-screen: 768px;
+$lg-screen: 992px;
+$xl-screen: 1200px;
+$xxl-screen: 1400px;
+
+// TRANSITIONS
+
+$tr-time: 0.4s;
+
+// BORDER RADIUS
+
+$border-radius: 6px;

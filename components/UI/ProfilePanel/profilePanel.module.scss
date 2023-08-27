@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.profilePanel {
+  grid-area: profile;
+  justify-self: end;
+
+  &__btn {
+    border: none;
+    box-shadow: none;
+  }
+
+  &__icon {
+    font-size: $fs-l !important;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .profilePanel {
+    display: none !important;
+  }
+}

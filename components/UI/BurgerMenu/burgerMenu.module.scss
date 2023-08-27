@@ -1,0 +1,40 @@
+@import "@/styles/variables.scss";
+
+.burgerMenu {
+  &__openBtn {
+    display: none !important;
+    grid-area: burgetBtn;
+    align-self: center;
+    justify-self: end;
+    border: none !important;
+  }
+
+  &__closeBtn {
+    display: block !important;
+    align-self: end;
+    border: none !important;
+    margin-left: auto;
+  }
+
+  &__btn {
+    height: max-content;
+    font-size: $fs-l;
+  }
+
+  &__settings {
+    width: 100%;
+    align-items: center;
+  }
+
+  &__drawerBody {
+    background-color: $bg-color !important;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .burgerMenu {
+    &__openBtn {
+      display: block !important;
+    }
+  }
+}

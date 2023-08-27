@@ -1,0 +1,15 @@
+@import "@/styles/variables.scss";
+
+.favoritePage {
+  padding: 1.5rem 5rem;
+
+  &__title {
+    @include PrimaryText($font-size: $fs-xxl, $fw: 600);
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .favoritePage {
+    padding: 0 1.5rem;
+  }
+}

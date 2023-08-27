@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.logo {
+  grid-area: logo;
+  align-self: center;
+  @include AccentText($fs-xxl, $text-color);
+  text-transform: none;
+}
+
+@media (max-width: $lg-screen) {
+  .logo {
+    @include AccentText($fs-xl, $text-color);
+  }
+}
+
+@media (max-width: $md-screen) {
+  .logo {
+    justify-self: start;
+    @include AccentText($fs-l, $text-color);
+  }
+}
