@@ -2,16 +2,20 @@
 
 import Link from "next/link";
 import routes, { routesNames } from "routes";
+import useStore from "@/hooks/useStore";
+import { useUserStore } from "@/store/userStore";
 
 import { Badge } from "antd";
 import { HeartOutlined } from "@ant-design/icons";
 import { ProfileLinkProps } from "@/components/UI/Links/";
 
 import styles from "@/components/UI/Links/link.module.scss";
-import { useUserStore } from "@/store/userStore";
 
 const FavoriteLink = ({ showName = false, clickHandler }: ProfileLinkProps) => {
-  const favoriteProducts = useUserStore((state) => state.favoriteProduct);
+  const favoriteProductsLength = useStore(
+    useUserStore,
+    (state) => state.favoriteProduct.length
+  );
 
   return (
     <>
@@ -23,10 +27,10 @@ const FavoriteLink = ({ showName = false, clickHandler }: ProfileLinkProps) => {
         >
           <HeartOutlined />
           {routes[routesNames.favorite].name}
-          <Badge count={favoriteProducts.length} showZero={false} />
+          <Badge count={favoriteProductsLength} showZero={false} />
         </Link>
       ) : (
-        <Badge count={favoriteProducts.length} showZero={false}>
+        <Badge count={favoriteProductsLength} showZero={false}>
           <Link href={routes[routesNames.favorite].path} className={styles.link}>
             <HeartOutlined />
           </Link>

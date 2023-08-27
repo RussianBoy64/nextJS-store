@@ -6,6 +6,7 @@ import NavLink from "@/components/UI/Links/NavLink";
 export interface ProfileLinkProps {
   showName?: boolean;
   clickHandler?: () => void;
+  favoriteProductCount?: number;
 }
 
 export interface NavLinkProps {
