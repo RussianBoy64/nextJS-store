@@ -2,6 +2,10 @@ import { Product } from "api/productsData";
 import routes, { routesNames } from "routes";
 import { useUserStore } from "@/store/userStore";
 import { buttonTypes } from "settings/themeSettings";
+import useStore from "@/hooks/useStore";
+import { useSettingsStore } from "@/store/settingsStore";
+import currency from "settings/currencySettings";
+import useMounted from "@/hooks/useMounted";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -9,15 +13,13 @@ import { Button } from "antd";
 import { HeartOutlined, HeartFilled, ShoppingCartOutlined } from "@ant-design/icons";
 
 import styles from "./productCard.module.scss";
-import useStore from "@/hooks/useStore";
-import { useSettingsStore } from "@/store/settingsStore";
-import currency, { currencyData, currencyTypes } from "settings/currencySettings";
 
 interface PopularGoodsCardProps {
   product: Product;
 }
 
 const ProductCard = ({ product }: PopularGoodsCardProps) => {
+  const mounted = useMounted();
   const [favoriteProductList, addProductToFavorite, removeProductFromFavorite] =
     useUserStore((state) => [
       state.favoriteProduct,
@@ -54,12 +56,14 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
           width={398}
           height={604}
         />
-        <Button
-          className={styles.card__favorite}
-          type={buttonTypes.default}
-          icon={isProductInFavorites ? <HeartFilled /> : <HeartOutlined />}
-          onClick={favoriteClickHander}
-        />
+        {mounted && (
+          <Button
+            className={styles.card__favorite}
+            type={buttonTypes.default}
+            icon={isProductInFavorites ? <HeartFilled /> : <HeartOutlined />}
+            onClick={favoriteClickHander}
+          />
+        )}
         <Button
           className={styles.card__cart}
           type={buttonTypes.primary}

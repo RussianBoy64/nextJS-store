@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { themeTypes } from "settings/themeSettings";
 import { useSettingsStore } from "@/store/settingsStore";
 import { useTheme } from "next-themes";
+import useStore from "@/hooks/useStore";
+import useMounted from "@/hooks/useMounted";
 
 import { Switch } from "antd";
 import Image from "next/image";
@@ -11,13 +12,10 @@ import sunSrc from "public/sun.svg";
 import moonSrc from "public/moon.svg";
 
 import styles from "./themeSwitcher.module.scss";
-import useStore from "@/hooks/useStore";
 
 const ThemeSwitcher = () => {
-  const [mounted, setMounted] = useState(false);
-
   const { setTheme } = useTheme();
-
+  const mounted = useMounted();
   const themeStyle = useStore(useSettingsStore, (state) => state.themeStyle);
   const setThemeStyle = useSettingsStore((state) => state.setThemeStyle);
 
@@ -30,10 +28,6 @@ const ThemeSwitcher = () => {
       setThemeStyle(themeTypes.dark);
     }
   };
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return null;
