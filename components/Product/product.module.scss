@@ -1,0 +1,106 @@
+@import "@/styles/variables.scss";
+
+.product {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem 5rem;
+
+  &__image {
+    max-width: 300px;
+    height: auto;
+  }
+
+  &__description {
+    display: grid;
+    justify-content: start;
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "category favorite" "title favorite" "price ." "cartBtn cartBtn" "delivery delivery" "shipping shipping" "description description";
+    max-width: 300px;
+    gap: 0.5rem 1rem;
+    margin-top: 1rem;
+  }
+
+  &__category {
+    grid-area: category;
+    font-size: $fs-s;
+    color: $text-color50;
+  }
+
+  &__title {
+    grid-area: title;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__price {
+    grid-area: price;
+    margin-top: 1rem;
+    color: $accent-primary;
+    font-weight: 600;
+  }
+
+  &__favorite {
+    color: $accent-primary;
+  }
+
+  &__cart {
+    grid-area: cartBtn;
+    margin: 1rem 0;
+  }
+
+  &__delivery,
+  &__shipping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: $fs-s;
+    font-weight: 600;
+  }
+
+  &__delivery {
+    grid-area: delivery;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $accent-secondary;
+  }
+
+  &__shipping {
+    grid-area: shipping;
+  }
+
+  &__collapse {
+    grid-area: description;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: $xxl-screen) {
+  .product {
+    padding: 1.5rem 3rem;
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .product {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .product {
+    gap: 1rem;
+
+    &__image {
+      width: 200px;
+      height: min-content;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+}

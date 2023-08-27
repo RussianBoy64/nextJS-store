@@ -1,8 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
+import { QueryFunctionContext, useQuery } from "@tanstack/react-query";
 import getQueryClient from "app/getQueryClient";
 
 export enum queryKey {
   products = "products",
+  product = "product",
   man = "man",
   woman = "woman",
   jewelery = "jewelery",
@@ -29,6 +30,12 @@ export interface Product {
 
 export const getAllProducts = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
+  return res.json();
+};
+
+export const getProductsById = async ({ queryKey }: QueryFunctionContext) => {
+  const [_, id] = queryKey;
+  const res = await fetch(`https://fakestoreapi.com/products/${id}`);
   return res.json();
 };
 
@@ -85,6 +92,14 @@ export const prefetchProductsByCategory = async (category: productsCategories) =
   return queryClient;
 };
 
+export const prefetchProductsById = async (id: number) => {
+  const queryClient = getQueryClient();
+
+  await queryClient.prefetchQuery([id, id], getProductsById);
+
+  return queryClient;
+};
+
 export const fetchAllProducts = () => {
   return useQuery<Product[]>({
     queryKey: [queryKey.products],
@@ -118,4 +133,11 @@ export const fetchProductsByCategory = (category: productsCategories) => {
         queryFn: getAllProducts,
       });
   }
+};
+
+export const fetchProductsById = (id: number) => {
+  return useQuery<Product>({
+    queryKey: [id, id],
+    queryFn: getProductsById,
+  });
 };

@@ -5,7 +5,6 @@ import { buttonTypes } from "settings/themeSettings";
 import useStore from "@/hooks/useStore";
 import { useSettingsStore } from "@/store/settingsStore";
 import currency from "settings/currencySettings";
-import useMounted from "@/hooks/useMounted";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -19,14 +18,12 @@ interface PopularGoodsCardProps {
 }
 
 const ProductCard = ({ product }: PopularGoodsCardProps) => {
-  const mounted = useMounted();
-  const [favoriteProductList, addProductToFavorite, removeProductFromFavorite] =
-    useUserStore((state) => [
-      state.favoriteProduct,
-      state.addProductToFavorite,
-      state.removeProductFromFavorite,
-    ]);
-  const isProductInFavorites = favoriteProductList.includes(product.id);
+  const favoriteProductList = useStore(useUserStore, (state) => state.favoriteProduct);
+  const [addProductToFavorite, removeProductFromFavorite] = useUserStore((state) => [
+    state.addProductToFavorite,
+    state.removeProductFromFavorite,
+  ]);
+  const isProductInFavorites = favoriteProductList?.includes(product.id);
 
   const productRoute = `${routes[routesNames.product].path}/${product.id}`;
 
@@ -56,14 +53,12 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
           width={398}
           height={604}
         />
-        {mounted && (
-          <Button
-            className={styles.card__favorite}
-            type={buttonTypes.default}
-            icon={isProductInFavorites ? <HeartFilled /> : <HeartOutlined />}
-            onClick={favoriteClickHander}
-          />
-        )}
+        <Button
+          className={styles.card__favorite}
+          type={buttonTypes.default}
+          icon={isProductInFavorites ? <HeartFilled /> : <HeartOutlined />}
+          onClick={favoriteClickHander}
+        />
         <Button
           className={styles.card__cart}
           type={buttonTypes.primary}
