@@ -60,8 +60,6 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
     }
   };
 
-  console.log(productsIdInCart);
-
   return (
     <Link className={styles.card} href={productRoute}>
       <div className={styles.card__imageWrapper}>

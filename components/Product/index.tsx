@@ -75,8 +75,6 @@ const Product = ({ id }: productProps) => {
     },
   ];
 
-  console.log(productsIdInCart);
-
   return (
     <section className={styles.product}>
       <Image
