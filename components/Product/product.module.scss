@@ -2,6 +2,7 @@
 
 .product {
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   gap: 2rem;
   padding: 1.5rem 5rem;
@@ -47,6 +48,15 @@
   &__cart {
     grid-area: cartBtn;
     margin: 1rem 0;
+
+    &_primary {
+      background-color: $violet;
+    }
+
+    &_secondary {
+      color: $black;
+      background-color: $gray;
+    }
   }
 
   &__delivery,

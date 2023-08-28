@@ -17,6 +17,7 @@ import deliverySrc from "public/delivery.svg";
 import shippingSvg from "@/public/shipping.svg";
 
 import styles from "./product.module.scss";
+import { useCartStore } from "@/store/cartStore";
 
 interface productProps {
   id: number;
@@ -24,17 +25,23 @@ interface productProps {
 
 const Product = ({ id }: productProps) => {
   const favoriteProductList = useStore(useUserStore, (state) => state.favoriteProduct);
+  const productsIdInCart = useStore(useCartStore, (state) => state.productId);
+  const currentCurrency = useStore(useSettingsStore, (state) => state.currensy);
   const [addProductToFavorite, removeProductFromFavorite] = useUserStore((state) => [
     state.addProductToFavorite,
     state.removeProductFromFavorite,
   ]);
+  const [addProductToCart, removeProductFromCart] = useCartStore((state) => [
+    state.addProductToCart,
+    state.removeProductFromCart,
+  ]);
 
-  const currentCurrency = useStore(useSettingsStore, (state) => state.currensy);
   const { data } = fetchProductsById(id);
 
   if (!data) return null;
 
   const isProductInFavorites = favoriteProductList?.includes(data.id);
+  const isProductInCart = productsIdInCart?.includes(data.id);
   const productPrice = currentCurrency
     ? currency[currentCurrency].getPrice(data.price)
     : data.price;
@@ -50,6 +57,16 @@ const Product = ({ id }: productProps) => {
     }
   };
 
+  const cartClickHandler = (event: React.MouseEvent) => {
+    event.preventDefault();
+
+    if (isProductInCart) {
+      removeProductFromCart(data);
+    } else {
+      addProductToCart(data);
+    }
+  };
+
   const items: CollapseProps["items"] = [
     {
       key: "1",
@@ -57,6 +74,8 @@ const Product = ({ id }: productProps) => {
       children: <p>{data.description}</p>,
     },
   ];
+
+  console.log(productsIdInCart);
 
   return (
     <section className={styles.product}>
@@ -78,15 +97,17 @@ const Product = ({ id }: productProps) => {
         />
         <span className={styles.product__price}>{`${productPrice}${productSign}`}</span>
         <Button
-          className={styles.product__cart}
+          className={[
+            styles.product__cart,
+            isProductInCart
+              ? styles.product__cart_secondary
+              : styles.product__cart_primary,
+          ].join(" ")}
           type={buttonTypes.primary}
           icon={<ShoppingCartOutlined />}
-          onClick={(event) => {
-            event.stopPropagation();
-            alert("add to cart");
-          }}
+          onClick={cartClickHandler}
         >
-          Add
+          {isProductInCart ? "Remove" : "Add"}
         </Button>
 
         <div className={styles.product__delivery}>

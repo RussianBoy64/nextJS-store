@@ -51,6 +51,15 @@
     bottom: 0;
     right: 0;
     text-transform: uppercase;
+
+    &_primary {
+      background-color: $violet;
+    }
+
+    &_secondary {
+      background-color: $gray;
+      color: $black;
+    }
   }
 
   &__info {
