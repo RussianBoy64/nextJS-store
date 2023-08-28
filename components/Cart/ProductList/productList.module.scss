@@ -1,0 +1,37 @@
+@import "@/styles/variables.scss";
+
+.productList {
+  grid-area: products;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(5, auto);
+
+  &__listHeader {
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: $text-color50;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid $text-color50;
+
+    &:nth-child(1) {
+      grid-column: span 2;
+      text-align: left;
+    }
+
+    &:nth-child(3) {
+      grid-column: span 2;
+      text-align: right;
+    }
+  }
+}
+
+.empty {
+  grid-column: span 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  text-align: center;
+}

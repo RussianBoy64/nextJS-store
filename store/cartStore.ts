@@ -1,12 +1,14 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Product } from "api/productsData";
+import { Product, ProductInCart } from "api/productsData";
 
 interface CartState {
   productId: number[];
-  productsInCart: Product[];
+  productsInCart: ProductInCart[];
   addProductToCart: (productToAdd: Product) => void;
   removeProductFromCart: (productToRemove: Product) => void;
+  increaseAmount: (productID: number) => void;
+  decreaseAmount: (productID: number) => void;
 }
 
 export const useCartStore = create<CartState>()(
@@ -25,6 +27,20 @@ export const useCartStore = create<CartState>()(
           productsInCart: state.productsInCart.filter(
             (product) => product.id !== productToRemove.id
           ),
+        })),
+      increaseAmount: (productId) =>
+        set((state) => ({
+          productsInCart: state.productsInCart.map((product) => {
+            if (product.id === productId && product.amount) product.amount++;
+            return product;
+          }),
+        })),
+      decreaseAmount: (productId) =>
+        set((state) => ({
+          productsInCart: state.productsInCart.map((product) => {
+            if (product.id === productId && product.amount) product.amount--;
+            return product;
+          }),
         })),
     }),
     { name: "cart-storage" }

@@ -28,6 +28,10 @@ export interface Product {
   };
 }
 
+export interface ProductInCart extends Product {
+  amount?: number;
+}
+
 export const getAllProducts = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   return res.json();

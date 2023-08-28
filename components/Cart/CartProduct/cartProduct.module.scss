@@ -1,0 +1,34 @@
+@import "@/styles/variables.scss";
+
+.cartProduct {
+  &__image {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: contain;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__category {
+    font-size: $fs-normal;
+    color: $text-color50;
+  }
+
+  &__title {
+    font-size: $fs-l;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    grid-column: span 2;
+    font-size: $fs-l;
+    text-align: right;
+    font-weight: 600;
+  }
+}

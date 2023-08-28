@@ -63,7 +63,11 @@ const Product = ({ id }: productProps) => {
     if (isProductInCart) {
       removeProductFromCart(data);
     } else {
-      addProductToCart(data);
+      const productToAdd = {
+        ...data,
+        amount: 1,
+      };
+      addProductToCart(productToAdd);
     }
   };
 

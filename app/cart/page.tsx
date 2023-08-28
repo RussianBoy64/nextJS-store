@@ -1,4 +1,4 @@
-import CartProductInfo from "@/components/Cart/CartProductInfo";
+import ProductList from "@/components/Cart/ProductList";
 import styles from "./cartPage.module.scss";
 
 export const metadata = {
@@ -9,7 +9,8 @@ export const metadata = {
 const page = () => {
   return (
     <section className={styles.cart}>
-      <CartProductInfo />
+      <h4 className={styles.cart__title}>Shopping cart</h4>
+      <ProductList />
     </section>
   );
 };

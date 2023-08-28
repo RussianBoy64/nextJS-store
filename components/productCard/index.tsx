@@ -56,7 +56,11 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
     if (isProductInCart) {
       removeProductFromCart(product);
     } else {
-      addProductToCart(product);
+      const productToAdd = {
+        ...product,
+        amount: 1,
+      };
+      addProductToCart(productToAdd);
     }
   };
 
