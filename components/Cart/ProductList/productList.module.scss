@@ -1,11 +1,13 @@
 @import "@/styles/variables.scss";
 
 .productList {
-  grid-area: products;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr repeat(2, auto);
   row-gap: 2rem;
+  flex-grow: 1;
+  width: min-content;
+  padding-right: 2rem;
 
   &__listHeader {
     display: inline-block;
@@ -33,4 +35,22 @@
   justify-content: center;
   margin: 50px 0;
   text-align: center;
+}
+
+@media (max-width: $xl-screen) {
+  .productList {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .productList {
+    row-gap: 1rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .productList {
+    width: 100%;
+  }
 }

@@ -1,7 +1,7 @@
 @import "@/styles/variables.scss";
 
 .cartPrice {
-  grid-area: price;
+  width: 30%;
   min-width: 280px;
   padding: 30px;
   background-color: $accent-secondary;
@@ -46,5 +46,25 @@
     justify-content: center;
     gap: 0.5rem;
     margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: $md-screen) {
+  .cartPrice {
+    width: 100%;
+
+    &__title {
+      font-size: $fs-xl;
+    }
+
+    &__total {
+      font-size: $fs-xxl;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .cartPrice {
+    padding: 20px;
   }
 }
