@@ -93,11 +93,9 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
         </Button>
       </div>
 
-      <div className={styles.card__info}>
-        <span className={styles.card__category}>{product.category}</span>
-        <span className={styles.card__title}>{product.title}</span>
-        <span className={styles.card__price}>{`${productPrice}${productSign}`}</span>
-      </div>
+      <span className={styles.card__category}>{product.category}</span>
+      <span className={styles.card__title}>{product.title}</span>
+      <span className={styles.card__price}>{`${productPrice}${productSign}`}</span>
     </Link>
   );
 };

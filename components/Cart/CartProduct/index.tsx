@@ -6,9 +6,9 @@ import { ProductInCart } from "api/productsData";
 import currency from "settings/currencySettings";
 
 import { Image } from "antd";
+import Amount from "@/components/UI/Amount";
 
 import styles from "./cartProduct.module.scss";
-import Amount from "@/components/UI/Amount";
 
 interface CartProductProps {
   product: ProductInCart;
@@ -34,9 +34,9 @@ const CartProduct = ({ product }: CartProductProps) => {
       </div>
 
       <Amount product={product} value={product.amount!} />
-      <span className={styles.cartProduct__price}>{`${
+      <span className={styles.cartProduct__price}>{`${(
         productPrice * product.amount!
-      }${productSign}`}</span>
+      ).toFixed(2)}${productSign}`}</span>
     </>
   );
 };
