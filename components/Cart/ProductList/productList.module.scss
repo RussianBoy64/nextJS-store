@@ -4,7 +4,8 @@
   grid-area: products;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: 1fr repeat(2, auto);
+  row-gap: 2rem;
 
   &__listHeader {
     display: inline-block;
@@ -15,19 +16,17 @@
     border-bottom: 1px solid $text-color50;
 
     &:nth-child(1) {
-      grid-column: span 2;
       text-align: left;
     }
 
     &:nth-child(3) {
-      grid-column: span 2;
       text-align: right;
     }
   }
 }
 
 .empty {
-  grid-column: span 5;
+  grid-column: span 3;
   display: flex;
   flex-direction: column;
   align-items: center;

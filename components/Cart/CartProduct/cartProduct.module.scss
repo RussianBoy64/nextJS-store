@@ -1,9 +1,12 @@
 @import "@/styles/variables.scss";
 
 .cartProduct {
+  display: flex;
+  align-items: center;
+
   &__image {
-    width: 200px !important;
-    height: 200px !important;
+    min-width: 200px;
+    max-height: 200px;
     object-fit: contain;
   }
 
@@ -12,6 +15,8 @@
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
+    max-width: 500px;
+    padding: 0 20px;
   }
 
   &__category {
@@ -26,9 +31,63 @@
   }
 
   &__price {
-    grid-column: span 2;
+    padding-left: 20px;
     font-size: $fs-l;
     text-align: right;
     font-weight: 600;
+  }
+}
+
+@media (max-width: $xxl-screen) {
+  .cartProduct {
+    &__image {
+      min-width: 150px;
+      max-height: 150px;
+    }
+  }
+}
+
+@media (max-width: $xl-screen) {
+  .cartProduct {
+    &__image {
+      min-width: 100px;
+      max-height: 100px;
+    }
+
+    &__title {
+      font-size: $fs-normal;
+    }
+  }
+}
+
+@media (max-width: $md-screen) {
+  .cartProduct {
+    &__image {
+      min-width: 80px;
+      max-height: 80px;
+    }
+
+    &__info {
+      padding: 0 10px;
+    }
+
+    &__category,
+    &__title {
+      font-size: $fs-s;
+    }
+
+    &__price {
+      padding-left: 10px;
+      font-size: $fs-normal;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .cartProduct {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: 10px;
   }
 }

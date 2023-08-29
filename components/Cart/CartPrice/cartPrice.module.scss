@@ -1,0 +1,50 @@
+@import "@/styles/variables.scss";
+
+.cartPrice {
+  grid-area: price;
+  min-width: 280px;
+  padding: 30px;
+  background-color: $accent-secondary;
+  border-radius: 6px;
+
+  &__title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: $fs-xxl;
+    font-weight: 500;
+    line-height: 3.5rem;
+    border-bottom: 1px solid $text-color50;
+  }
+
+  &__flexRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  &__total {
+    display: inline-block;
+    width: 100%;
+    margin: 1.5rem 0 1rem;
+    font-size: $fs-xxxl;
+    font-weight: 600;
+    text-align: right;
+  }
+
+  &__priceSign {
+    color: $text-color50;
+    font-size: $fs-normal;
+    font-weight: 600;
+  }
+
+  .cartPrice__ssl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+}

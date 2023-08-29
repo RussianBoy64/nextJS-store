@@ -16,6 +16,7 @@ $fs-normal: 16px;
 $fs-l: 1.5rem;
 $fs-xl: 2rem;
 $fs-xxl: 2.5rem;
+$fs-xxxl: 3.5rem;
 
 @mixin PrimaryText($font-size, $color: $text-color, $fw: 400) {
   font-family: "Inter", sans-serif;

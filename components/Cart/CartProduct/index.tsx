@@ -25,16 +25,14 @@ const CartProduct = ({ product }: CartProductProps) => {
 
   return (
     <>
-      <Image
-        className={styles.cartProduct__image}
-        src={product.image}
-        width={200}
-        height={200}
-      />
-      <div className={styles.cartProduct__info}>
-        <span className={styles.cartProduct__category}>{product.category}</span>
-        <span className={styles.cartProduct__title}>{product.title}</span>
+      <div className={styles.cartProduct}>
+        <Image className={styles.cartProduct__image} src={product.image} />
+        <div className={styles.cartProduct__info}>
+          <span className={styles.cartProduct__category}>{product.category}</span>
+          <span className={styles.cartProduct__title}>{product.title}</span>
+        </div>
       </div>
+
       <Amount product={product} value={product.amount!} />
       <span className={styles.cartProduct__price}>{`${
         productPrice * product.amount!
