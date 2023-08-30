@@ -92,7 +92,6 @@ const ProductCard = ({ product }: PopularGoodsCardProps) => {
           {isProductInCart ? "Remove" : "Add"}
         </Button>
       </div>
-
       <span className={styles.card__category}>{product.category}</span>
       <span className={styles.card__title}>{product.title}</span>
       <span className={styles.card__price}>{`${productPrice}${productSign}`}</span>

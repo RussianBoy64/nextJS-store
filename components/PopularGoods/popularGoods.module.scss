@@ -7,11 +7,6 @@
 
   &__swiper {
     overflow: visible;
-
-    & > div {
-      align-items: stretch;
-      height: 680px;
-    }
   }
 
   &__card {
@@ -22,20 +17,12 @@
 @media (max-width: $xl-screen) {
   .popularGoods {
     padding: 1.5rem 3rem;
-
-    &__swiper > div {
-      height: 620px;
-    }
   }
 }
 
 @media (max-width: $lg-screen) {
   .popularGoods {
     padding: 1.5rem 3rem;
-
-    &__swiper > div {
-      height: 580px;
-    }
   }
 }
 
@@ -45,10 +32,6 @@
 
     &__card {
       padding: none;
-    }
-
-    &__swiper > div {
-      height: 520px;
     }
   }
 }
