@@ -89,9 +89,13 @@
 
 @media (max-width: $sm-screen) {
   .cartProduct {
-    flex-direction: column;
-    flex-wrap: wrap;
+    grid-column: span 3;
     align-items: start;
     gap: 10px;
+
+    &__price {
+      margin-top: 5px;
+      align-self: flex-start;
+    }
   }
 }

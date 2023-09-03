@@ -13,3 +13,10 @@
     }
   }
 }
+
+@media (max-width: $sm-screen) {
+  .amount {
+    justify-self: left;
+    align-self: flex-start;
+  }
+}
