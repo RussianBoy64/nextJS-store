@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button, Drawer, Space } from "antd";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { buttonTypes } from "settings/themeSettings";
-import { FavoriteLink, ProfileLink, CartLink } from "@/components/UI/Links/";
+import { FavoriteLink, CartLink } from "@/components/UI/Links/";
 import SettingsPanel from "../SettingsPanel";
 
 import styles from "./burgerMenu.module.scss";
@@ -56,7 +56,6 @@ const BurgerMenu = () => {
           className={styles.burgerMenu__menu}
         >
           <FavoriteLink showName={true} clickHandler={onClose} />
-          <ProfileLink showName={true} clickHandler={onClose} />
           <CartLink showName={true} clickHandler={onClose} />
           <SettingsPanel />
         </Space>
