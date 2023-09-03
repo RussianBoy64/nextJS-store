@@ -17,8 +17,8 @@ interface CartProductProps {
 const CartProduct = ({ product }: CartProductProps) => {
   const currentCurrency = useStore(useSettingsStore, (state) => state.currensy);
   const productPrice = currentCurrency
-    ? currency[currentCurrency].getPrice(product.price)
-    : product.price;
+    ? currency[currentCurrency].getPrice(product.price) * product.amount!
+    : product.price * product.amount!;
   const productSign = currentCurrency ? currency[currentCurrency].sign : "$";
 
   if (!product) return null;
@@ -34,9 +34,9 @@ const CartProduct = ({ product }: CartProductProps) => {
       </div>
 
       <Amount product={product} value={product.amount!} />
-      <span className={styles.cartProduct__price}>{`${(
-        productPrice * product.amount!
-      ).toFixed(2)}${productSign}`}</span>
+      <span className={styles.cartProduct__price}>{`${productPrice.toFixed(
+        2
+      )}${productSign}`}</span>
     </>
   );
 };

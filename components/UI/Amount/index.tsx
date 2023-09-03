@@ -19,14 +19,14 @@ const Amount = ({ product, value }: AmountProps) => {
   );
 
   const plusClickHandler = () => {
-    increaseAmount(product.id);
+    increaseAmount(product);
   };
 
   const minusClickHandler = () => {
     if (value === 1) {
       removeProductFromCart(product);
     } else {
-      decreaseAmount(product.id);
+      decreaseAmount(product);
     }
   };
 

@@ -1,11 +1,15 @@
 @import "@/styles/variables.scss";
 
 .cartPrice {
+  display: flex;
+  flex-direction: column;
   width: 30%;
   min-width: 280px;
   padding: 30px;
+  color: $black;
   background-color: $accent-secondary;
   border-radius: 6px;
+  transition: all $tr-time ease-in;
 
   &__title {
     display: inline-block;
@@ -26,16 +30,55 @@
   }
 
   &__total {
+    position: relative;
+    align-self: end;
     display: inline-block;
-    width: 100%;
-    margin: 1.5rem 0 1rem;
-    font-size: $fs-xxxl;
+    width: fit-content;
+    margin: 1.5rem 0 0;
+    font-size: $fs-xxl;
     font-weight: 600;
-    text-align: right;
+    transition: all $tr-time ease-in-out;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: $black;
+      border-radius: $border-radius;
+      transition: all $tr-time ease-in-out;
+      transform: translateY(-50%);
+    }
+
+    &_cross {
+      opacity: 0.5;
+
+      &::before {
+        width: 100%;
+        background-color: $black50;
+      }
+    }
+  }
+
+  &__discount {
+    align-self: end;
+    display: inline-block;
+    width: fit-content;
+    height: 0;
+    font-size: $fs-xl;
+    font-weight: 600;
+    transition: all $tr-time ease-in-out;
+    overflow: hidden;
+
+    &_visible {
+      height: 80px;
+    }
   }
 
   &__priceSign {
-    color: $text-color50;
+    color: $black50;
     font-size: $fs-normal;
     font-weight: 600;
   }
