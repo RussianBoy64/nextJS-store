@@ -35,6 +35,10 @@ $fs-xxxl: 3.5rem;
   color: $color;
 }
 
+@mixin BlinkAnimation {
+  animation: blink 2000ms linear 1 forwards;
+}
+
 // BREAKPOINTS
 $sm-screen: 576px;
 $md-screen: 768px;
@@ -49,3 +53,27 @@ $tr-time: 0.4s;
 // BORDER RADIUS
 
 $border-radius: 6px;
+
+// ANIMATION
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+}

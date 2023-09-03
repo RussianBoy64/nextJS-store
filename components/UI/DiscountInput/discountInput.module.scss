@@ -16,7 +16,7 @@
     font-weight: 600;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
-    animation: blink 2000ms linear 1 forwards;
+    @include BlinkAnimation;
 
     &_success {
       background-color: $green;
@@ -36,6 +36,8 @@
   &__input {
     color: $black;
     background-color: $accent-secondary;
+    border-top-left-radius: $border-radius !important;
+    border-bottom-left-radius: $border-radius !important;
 
     &:disabled {
       color: $black50;
@@ -45,27 +47,5 @@
 
   &__btn {
     font-weight: 500;
-  }
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-
-  20% {
-    opacity: 1;
-    transform: translateY(-30px);
-  }
-
-  80% {
-    opacity: 1;
-    transform: translateY(-30px);
-  }
-
-  100% {
-    transform: translateY(0%);
-    opacity: 0;
   }
 }

@@ -4,14 +4,9 @@ import { ChangeEventHandler, KeyboardEventHandler, useState } from "react";
 import { promoCodes, useCartStore } from "@/store/cartStore";
 import useStore from "@/hooks/useStore";
 
-import { Space, Input, Button, message } from "antd";
+import { Space, Input, Button } from "antd";
 
 import styles from "./discountInput.module.scss";
-
-const enum messageTypes {
-  success,
-  error,
-}
 
 const DiscountInput = () => {
   const promoCode = useStore(useCartStore, (state) => state.promoCode);
@@ -24,6 +19,7 @@ const DiscountInput = () => {
   }));
 
   const showMessage = () => {
+    if (isMessageShown) return;
     setIsMessageShown(true);
     setTimeout(() => setIsMessageShown(false), 3000);
   };
@@ -45,11 +41,13 @@ const DiscountInput = () => {
     const input = event.target as HTMLInputElement;
     const isInputValid = input.value === promoCodes.cheap;
     showMessage();
+    // setIsMessageShown(true);
     if (isInputValid) setIsPromoCodeValid(true);
   };
 
   const onClickHandler = () => {
     if (isPromoCodeValid) {
+      setIsMessageShown(false);
       setIsPromoCodeValid(false);
     } else {
       const isInputValid = promoCode === promoCodes.cheap;
@@ -67,7 +65,6 @@ const DiscountInput = () => {
       {isMessageShown && !isPromoCodeValid && (
         <span className={errorMessageStyles}>Wrong promo-code!</span>
       )}
-
       {isPromoCodeValid ? (
         <>
           <Input
