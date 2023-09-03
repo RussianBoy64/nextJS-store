@@ -13,6 +13,7 @@ export enum routesNames {
   media,
   about,
   product,
+  catalog,
 }
 
 export interface route {
@@ -36,6 +37,7 @@ const routes: route[] = [
   { id: "media", name: "Media", path: "/media" },
   { id: "about", name: "About shopping", path: "/about" },
   { id: "product", name: "Product", path: "/product" },
+  { id: "catalog", name: "Catalog", path: "/catalog" },
 ];
 
 export default routes;

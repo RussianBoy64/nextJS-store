@@ -1,0 +1,35 @@
+@import "@/styles/variables.scss";
+
+.findProduct {
+  display: grid;
+  grid-template-columns: 50px 1fr min-content;
+  grid-template-areas: "image title price" "image category price";
+  align-items: center;
+  gap: 5px 10px;
+  margin-bottom: 15px;
+  text-transform: none;
+
+  &__image {
+    grid-area: image;
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    grid-area: title;
+    font-size: $fs-s;
+    line-height: 18px;
+    text-align: left;
+  }
+
+  &__category {
+    grid-area: category;
+    font-size: $fs-s;
+    color: $text-color50;
+    text-align: left;
+  }
+
+  &__price {
+    grid-area: price;
+  }
+}

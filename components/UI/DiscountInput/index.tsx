@@ -41,7 +41,6 @@ const DiscountInput = () => {
     const input = event.target as HTMLInputElement;
     const isInputValid = input.value === promoCodes.cheap;
     showMessage();
-    // setIsMessageShown(true);
     if (isInputValid) setIsPromoCodeValid(true);
   };
 

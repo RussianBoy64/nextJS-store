@@ -13,6 +13,7 @@ export enum productsCategories {
   man = "men's clothing",
   woman = "women's clothing",
   jewelery = "jewelery",
+  electronics = "electronics",
 }
 
 export interface Product {

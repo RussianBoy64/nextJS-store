@@ -26,7 +26,11 @@ const CartProduct = ({ product }: CartProductProps) => {
   return (
     <>
       <div className={styles.cartProduct}>
-        <Image className={styles.cartProduct__image} src={product.image} />
+        <Image
+          className={styles.cartProduct__image}
+          src={product.image}
+          alt="product image"
+        />
         <div className={styles.cartProduct__info}>
           <span className={styles.cartProduct__category}>{product.category}</span>
           <span className={styles.cartProduct__title}>{product.title}</span>
