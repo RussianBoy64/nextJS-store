@@ -15,6 +15,7 @@ interface CartState {
   isPromoCodeValid: boolean;
   addProductToCart: (productToAdd: Product) => void;
   removeProductFromCart: (productToRemove: Product) => void;
+  clearCart: () => void;
   increaseAmount: (productToIncreace: Product) => void;
   decreaseAmount: (productToDecreace: Product) => void;
   addPromoCode: (promoCodeToAdd: string) => void;
@@ -43,6 +44,13 @@ export const useCartStore = create<CartState>()(
             (product) => product.id !== productToRemove.id
           ),
           totalProducts: state.totalProducts - productToRemove.price,
+        })),
+      clearCart: () =>
+        set(() => ({
+          productId: [],
+          productsInCart: [],
+          totalProducts: 0,
+          total: 0,
         })),
       increaseAmount: (productToIncreace) =>
         set((state) => {

@@ -6,10 +6,12 @@ import useMounted from "@/hooks/useMounted";
 import currency, { currencyTypes } from "settings/currencySettings";
 
 import DiscountInput from "@/components/UI/DiscountInput";
-import { Button, List } from "antd";
+import { Modal, Button, List } from "antd";
 import { LockFilled } from "@ant-design/icons";
 
 import styles from "./cartPrice.module.scss";
+import { redirect } from "next/navigation";
+import routes, { routesNames } from "routes";
 
 type Delivery = number | "FREE";
 
@@ -52,10 +54,11 @@ const CartPrice = () => {
   const isMounted = useMounted();
   const { productPrice, isPromoCodeValid } = useCartStore((state) => ({
     productPrice: state.totalProducts,
-    promoCode: state.promoCode,
     isPromoCodeValid: state.isPromoCodeValid,
   }));
   const currentCurrency = useSettingsStore((state) => state.currensy);
+  const clearCart = useCartStore((state) => state.clearCart);
+  const [modal, contextHolder] = Modal.useModal();
 
   if (!isMounted) return null;
 
@@ -92,6 +95,31 @@ const CartPrice = () => {
   const totalStyles = getTotalPriceStyles(isPromoCodeValid);
   const totalWidthDiscountStyles = getTotalWIdthDiscountStyles(isPromoCodeValid);
 
+  const countDown = () => {
+    let secondsToGo = 5;
+
+    const instance = modal.success({
+      title: "Thank you!",
+      content: `You will redirect to catalog in ${secondsToGo} second.`,
+      afterClose: () => {
+        clearCart();
+        redirect(routes[routesNames.catalog].path);
+      },
+    });
+
+    const timer = setInterval(() => {
+      secondsToGo -= 1;
+      instance.update({
+        content: `This modal will be destroyed after ${secondsToGo} second.`,
+      });
+    }, 1000);
+
+    setTimeout(() => {
+      clearInterval(timer);
+      instance.destroy();
+    }, secondsToGo * 1000);
+  };
+
   return (
     <div className={styles.cartPrice}>
       <span className={styles.cartPrice__title}>Total</span>
@@ -124,9 +152,19 @@ const CartPrice = () => {
       </span>
 
       <DiscountInput />
-      <Button style={{ width: "100%" }} type="primary">
-        Buy now
-      </Button>
+      {productPrice ? (
+        <>
+          <Button onClick={countDown} style={{ width: "100%" }} type="primary">
+            Buy now
+          </Button>
+          {contextHolder}
+        </>
+      ) : (
+        <Button style={{ width: "100%" }} disabled type="primary">
+          Buy now
+        </Button>
+      )}
+
       <List.Item.Meta
         className={styles.cartPrice__ssl}
         avatar={<LockFilled />}
