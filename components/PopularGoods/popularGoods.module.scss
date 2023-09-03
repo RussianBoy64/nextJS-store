@@ -6,6 +6,7 @@
   overflow: hidden;
 
   &__swiper {
+    height: 650px;
     overflow: visible;
   }
 
@@ -17,6 +18,10 @@
 @media (max-width: $xl-screen) {
   .popularGoods {
     padding: 1.5rem 3rem;
+
+    &__swiper {
+      height: 550px;
+    }
   }
 }
 

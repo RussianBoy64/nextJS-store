@@ -1,16 +1,14 @@
 @import "@/styles/variables.scss";
 
 .favoriteProducts {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
   gap: 2rem;
   margin-top: 2rem;
 
   & > a {
-    width: 200px;
-    height: 450px;
+    width: 100%;
   }
 
   & img {
@@ -24,29 +22,26 @@
   text-align: center;
 }
 
-@media (max-width: $xl-screen) {
+@media (max-width: $lg-screen) {
   .favoriteProducts {
-    & > a {
-      width: 200px;
-      height: 450px;
-    }
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: $md-screen) {
   .favoriteProducts {
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
 
-    & > a {
-      width: 250px;
-      height: 400px;
-    }
+    // & > a {
+    //   width: 250px;
+    // }
   }
 }
 
 @media (max-width: $sm-screen) {
-  .favoriteProducts > a {
-    width: 280px;
-    height: 400px;
+  .favoriteProducts {
+    align-items: flex-start;
+    grid-template-columns: 1fr;
   }
 }

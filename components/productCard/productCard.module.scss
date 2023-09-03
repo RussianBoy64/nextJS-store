@@ -6,9 +6,9 @@
   grid-template-rows: min-content auto 1fr min-content;
   gap: 15px;
   width: 100%;
-  height: 600px;
+  height: 100%;
   padding: 1rem;
-  border: 1px solid transparent;
+  border: 1px solid $gray;
 
   transition: all $tr-time ease-in-out;
   transform: translateY(0);
@@ -100,8 +100,6 @@
 
 @media (max-width: $xl-screen) {
   .card {
-    height: 550px;
-
     &__imageWrapper {
       height: 300px;
     }
@@ -130,6 +128,6 @@
 
 @media (max-width: $sm-screen) {
   .card {
-    padding: none;
+    padding: 15px;
   }
 }
