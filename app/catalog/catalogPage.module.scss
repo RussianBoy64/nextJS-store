@@ -26,18 +26,9 @@
   }
 }
 
-@media (max-width: $xxl-screen) {
-  .catalogPage {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    // & > a {
-    //   width: 250px;
-    // }
-  }
-}
-
-@media (max-width: $xl-screen) {
+.notFound {
+  text-align: center;
+  grid-column: span 4;
 }
 
 @media (max-width: $lg-screen) {
@@ -49,6 +40,10 @@
     &__filters {
       grid-column: span 3;
     }
+  }
+
+  .notFound {
+    grid-column: span 3;
   }
 }
 
@@ -67,5 +62,9 @@
     & > a {
       font-size: $fs-s;
     }
+  }
+
+  .notFound {
+    grid-column: span 2;
   }
 }

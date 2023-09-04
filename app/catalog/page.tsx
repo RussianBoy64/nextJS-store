@@ -137,10 +137,10 @@ const ProductPage = () => {
           <ProductCard product={product} key={product.id} />
         ))
       ) : (
-        <>
+        <span className={styles.notFound}>
           <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
-          <span className={styles.notFound}>No Favorite products yeat!</span>
-        </>
+          <span>No Favorite products yeat!</span>
+        </span>
       )}
     </section>
   );
