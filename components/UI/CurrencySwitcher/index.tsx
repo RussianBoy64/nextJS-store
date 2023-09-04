@@ -1,17 +1,25 @@
+import useStore from "@/hooks/useStore";
+import { useSettingsStore } from "@/store/settingsStore";
 import { Select } from "antd";
-import currency from "settings/currencySettings";
+import currency, { currencyTypes } from "settings/currencySettings";
 
 const CurrencySwitcher = () => {
-  const currencyChangeHandler = (value: string) => {
-    console.log(`selected ${value}`);
+  let currentCurency = useStore(useSettingsStore, (state) => state.currensy);
+  const setCurrency = useSettingsStore((state) => state.setCurrency);
+
+  if (!currentCurency) currentCurency = currency[currencyTypes.USD].value;
+
+  const currencyChangeHandler = (value: currencyTypes) => {
+    setCurrency(value);
   };
 
   return (
     <Select
-      defaultValue={currency[0].value}
+      defaultValue={currencyTypes.USD}
+      value={currentCurency}
       size="small"
       onChange={currencyChangeHandler}
-      options={currency}
+      options={Object.values(currency)}
     />
   );
 };

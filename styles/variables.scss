@@ -7,8 +7,11 @@ $accent-secondary: var(--accent-secondary);
 
 $white: #ffffff;
 $black: #000c22;
+$black50: #000c2285;
 $gray: #eee9dc;
 $violet: #a332f2;
+$green: greenyellow;
+$red: #ff4d4f;
 
 // TYPOGRAPHY
 $fs-s: 12px;
@@ -16,6 +19,7 @@ $fs-normal: 16px;
 $fs-l: 1.5rem;
 $fs-xl: 2rem;
 $fs-xxl: 2.5rem;
+$fs-xxxl: 3.5rem;
 
 @mixin PrimaryText($font-size, $color: $text-color, $fw: 400) {
   font-family: "Inter", sans-serif;
@@ -31,6 +35,10 @@ $fs-xxl: 2.5rem;
   color: $color;
 }
 
+@mixin BlinkAnimation {
+  animation: blink 2000ms linear 1 forwards;
+}
+
 // BREAKPOINTS
 $sm-screen: 576px;
 $md-screen: 768px;
@@ -42,6 +50,30 @@ $xxl-screen: 1400px;
 
 $tr-time: 0.4s;
 
-// BORDER RADIUS
+// ELEMENTS
 
 $border-radius: 6px;
+
+// ANIMATION
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+}

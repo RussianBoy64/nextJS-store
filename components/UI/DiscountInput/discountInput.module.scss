@@ -1,0 +1,51 @@
+@import "@/styles/variables.scss";
+
+.discountInput {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  &__message {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: $black;
+    font-weight: 600;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    @include BlinkAnimation;
+
+    &_success {
+      background-color: $green;
+    }
+
+    &_error {
+      background-color: $red;
+    }
+  }
+
+  &__input,
+  &__btn {
+    position: relative;
+    z-index: 10 !important;
+  }
+
+  &__input {
+    color: $black;
+    background-color: $accent-secondary;
+    border-top-left-radius: $border-radius !important;
+    border-bottom-left-radius: $border-radius !important;
+
+    &:disabled {
+      color: $black50;
+      background-color: $accent-secondary;
+    }
+  }
+
+  &__btn {
+    font-weight: 500;
+  }
+}

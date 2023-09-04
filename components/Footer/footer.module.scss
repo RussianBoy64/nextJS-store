@@ -25,6 +25,12 @@
   }
 }
 
+@media (max-width: $xxl-screen) {
+  .footer {
+    padding: 1.5rem 3rem;
+  }
+}
+
 @media (max-width: $lg-screen) {
   .footer {
     padding: 1.5rem;

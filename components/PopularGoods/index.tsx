@@ -35,7 +35,7 @@ const PopularGoods = ({ category }: PopularGoodsProps) => {
             slidesPerView: 3,
             spaceBetween: 20,
           },
-          1024: {
+          992: {
             slidesPerView: 4,
             spaceBetween: 20,
           },

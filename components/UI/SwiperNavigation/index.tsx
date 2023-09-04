@@ -6,7 +6,7 @@ import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 import styles from "./swiperNavigation.module.scss";
 
-const swiperNavigation = () => {
+const SwiperNavigation = () => {
   const swiper = useSwiper();
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
@@ -46,4 +46,4 @@ const swiperNavigation = () => {
   );
 };
 
-export default swiperNavigation;
+export default SwiperNavigation;

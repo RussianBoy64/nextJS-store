@@ -1,12 +1,14 @@
 @import "@/styles/variables.scss";
 
 .card {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 20px;
-  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content auto 1fr min-content;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
   padding: 1rem;
-  border: 1px solid transparent;
+  border: 1px solid $gray;
 
   transition: all $tr-time ease-in-out;
   transform: translateY(0);
@@ -25,10 +27,19 @@
 
   &__imageWrapper {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background-color: $white;
+    border-radius: $border-radius;
   }
 
   &__image {
-    max-height: 450px;
+    width: 385px;
+    height: 462px;
     object-fit: contain;
     object-position: center;
   }
@@ -51,49 +62,52 @@
     bottom: 0;
     right: 0;
     text-transform: uppercase;
+
+    &_primary {
+      background-color: $violet;
+    }
+
+    &_secondary {
+      background-color: $gray;
+      color: $black;
+    }
   }
 
-  &__info {
-    display: grid;
-    grid-template-columns: 1fr min-content;
-    grid-template-rows: auto 1fr min-content;
-    grid-template-areas: "category category" "title title" ". price";
-    height: 100%;
+  &__category,
+  &__title,
+  &__price {
+    display: inline-block;
+    width: 100%;
   }
 
   &__category {
-    grid-area: category;
     font-size: $fs-s;
     color: $text-color50;
   }
 
   &__title {
-    grid-area: title;
     font-weight: 600;
   }
 
   &__price {
-    grid-area: price;
+    margin-top: auto;
     color: $accent-primary;
+    text-align: right;
     font-size: $fs-l;
     font-weight: 600;
   }
 }
 
 @media (max-width: $xl-screen) {
-  .card__image {
-    max-height: 400px;
+  .card {
+    &__imageWrapper {
+      height: 300px;
+    }
   }
 }
 
 @media (max-width: $lg-screen) {
   .card {
-    height: 550px;
-
-    &__image {
-      max-height: 350px;
-    }
-
     &__favorite,
     &__cart {
       z-index: 100;
@@ -114,11 +128,6 @@
 
 @media (max-width: $sm-screen) {
   .card {
-    height: 500px;
-    padding: none;
-
-    &__image {
-      max-height: 300px;
-    }
+    padding: 15px;
   }
 }

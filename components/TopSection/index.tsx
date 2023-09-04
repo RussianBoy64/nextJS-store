@@ -44,17 +44,14 @@ const topSectionContent: ITopSectionContent = {
 function getTopSectionContent(pathname: string) {
   switch (pathname) {
     case routes[routesNames.man].path:
-      console.log(pathname, routes[routesNames.man].path);
       return topSectionContent[routes[routesNames.man].id as keyof ITopSectionContent];
 
     case routes[routesNames.jewelery].path:
-      console.log(pathname, routes[routesNames.jewelery].path);
       return topSectionContent[
         routes[routesNames.jewelery].id as keyof ITopSectionContent
       ];
 
     default:
-      console.log(pathname, routes[routesNames.woman].path);
       return topSectionContent[routes[routesNames.woman].id as keyof ITopSectionContent];
   }
 }

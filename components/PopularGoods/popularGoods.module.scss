@@ -6,11 +6,26 @@
   overflow: hidden;
 
   &__swiper {
+    height: 650px;
     overflow: visible;
+  }
+
+  &__card {
+    min-height: 100%;
   }
 }
 
 @media (max-width: $xl-screen) {
+  .popularGoods {
+    padding: 1.5rem 3rem;
+
+    &__swiper {
+      height: 550px;
+    }
+  }
+}
+
+@media (max-width: $lg-screen) {
   .popularGoods {
     padding: 1.5rem 3rem;
   }

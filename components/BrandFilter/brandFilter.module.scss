@@ -48,6 +48,10 @@
   }
 }
 
+[data-theme="dark"] .brandFilter__logo {
+  filter: invert(360);
+}
+
 @media (max-width: $lg-screen) {
   .brandFilter {
     padding: 5.5rem 4rem;

@@ -1,0 +1,62 @@
+@import "@/styles/variables.scss";
+
+.productList {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr repeat(2, auto);
+  row-gap: 2rem;
+  flex-grow: 1;
+  width: min-content;
+  padding-right: 2rem;
+
+  &__listHeader {
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: $text-color50;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid $text-color50;
+
+    &:nth-child(1) {
+      text-align: left;
+    }
+
+    &:nth-child(3) {
+      text-align: right;
+    }
+  }
+}
+
+.empty {
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  text-align: center;
+}
+
+@media (max-width: $xl-screen) {
+  .productList {
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: $lg-screen) {
+  .productList {
+    row-gap: 1rem;
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .productList {
+    grid-template-rows: min-content 70px;
+
+    &__listHeader {
+      display: none;
+    }
+  }
+}

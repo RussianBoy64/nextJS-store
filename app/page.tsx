@@ -1,8 +1,8 @@
-import HydratedPopularGoods from "@/components/PopularGoods/hydratedPopularGoods";
 import { productsCategories } from "api/productsData";
 
 import TopSection from "@/components/TopSection";
 import BrandFilter from "@/components/BrandFilter";
+import HydratedPopularGoods from "@/components/PopularGoods/hydratedPopularGoods";
 import Inspiration from "@/components/Inspiration";
 
 import insparationWomanImg from "@/public/images/inspirationWoman.png";

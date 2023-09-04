@@ -6,10 +6,13 @@ import { ThemeProvider } from "next-themes";
 import { ConfigProvider } from "antd";
 import themeSettings, { themeTypes } from "settings/themeSettings";
 import { useSettingsStore } from "@/store/settingsStore";
+import useStore from "@/hooks/useStore";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient());
-  const themeStyle = useSettingsStore((state) => state.themeStyle);
+  let themeStyle = useStore(useSettingsStore, (state) => state.themeStyle);
+
+  if (!themeStyle) themeStyle = themeTypes.light;
 
   return (
     <QueryClientProvider client={queryClient}>
