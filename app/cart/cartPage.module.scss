@@ -26,15 +26,6 @@
     padding: 1.5rem 3rem;
   }
 }
-@media (max-width: $lg-screen) {
-  .cart {
-    padding: 1.5rem;
-
-    &__title {
-      font-size: $fs-xxl;
-    }
-  }
-}
 
 @media (max-width: $lg-screen) {
   .cart {

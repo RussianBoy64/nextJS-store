@@ -1,0 +1,71 @@
+@import "@/styles/variables.scss";
+
+.catalogPage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: min-content;
+  gap: 10px;
+  padding: 0 5rem;
+
+  &__filters {
+    grid-column: span 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &Input {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: $xxl-screen) {
+  .catalogPage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    // & > a {
+    //   width: 250px;
+    // }
+  }
+}
+
+@media (max-width: $xl-screen) {
+}
+
+@media (max-width: $lg-screen) {
+  .catalogPage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 1.5rem;
+
+    &__filters {
+      grid-column: span 3;
+    }
+  }
+}
+
+@media (max-width: $sm-screen) {
+  .catalogPage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1rem;
+
+    &__filters {
+      grid-column: span 2;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    & > a {
+      font-size: $fs-s;
+    }
+  }
+}

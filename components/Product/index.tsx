@@ -7,6 +7,7 @@ import { useUserStore } from "@/store/userStore";
 import currency from "settings/currencySettings";
 import { buttonTypes } from "settings/themeSettings";
 import type { CollapseProps } from "antd";
+import { useCartStore } from "@/store/cartStore";
 
 import { Button } from "antd";
 import Image from "next/image";
@@ -17,7 +18,7 @@ import deliverySrc from "public/delivery.svg";
 import shippingSvg from "@/public/shipping.svg";
 
 import styles from "./product.module.scss";
-import { useCartStore } from "@/store/cartStore";
+import { redirect } from "next/navigation";
 
 interface productProps {
   id: number;
@@ -38,7 +39,7 @@ const Product = ({ id }: productProps) => {
 
   const { data } = fetchProductsById(id);
 
-  if (!data) return null;
+  if (!data) redirect("/404");
 
   const isProductInFavorites = favoriteProductList?.includes(data.id);
   const isProductInCart = productsIdInCart?.includes(data.id);

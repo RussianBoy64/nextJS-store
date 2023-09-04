@@ -36,7 +36,6 @@ const CartProduct = ({ product }: CartProductProps) => {
           <span className={styles.cartProduct__title}>{product.title}</span>
         </div>
       </div>
-
       <Amount product={product} value={product.amount!} />
       <span className={styles.cartProduct__price}>{`${productPrice.toFixed(
         2

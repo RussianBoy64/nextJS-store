@@ -34,7 +34,7 @@ const SearchResults = ({ searchValue }: searchResultsProps) => {
     <div className={styles.searchResults}>
       {isLoading && (
         <>
-          <Spin tip="Loading" indicator={<LoadingOutlined spin />} />
+          <Spin indicator={<LoadingOutlined spin />} />
           <span className={styles.searchResults__spintip}>Loading...</span>
         </>
       )}

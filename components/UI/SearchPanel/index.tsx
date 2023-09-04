@@ -7,9 +7,13 @@ import { SearchOutlined } from "@ant-design/icons";
 import SearchResults from "./SearchResults";
 
 import styles from "./searchPanel.module.scss";
+import { useSearchParams } from "next/navigation";
 
 const SearchPanel = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
+  const searchParams = useSearchParams();
+  const [searchValue, setSearchValue] = useState<string>(
+    searchParams.get("search") || ""
+  );
 
   const onChangeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
     const input = event.target as HTMLInputElement;
